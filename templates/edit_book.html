@@ -1,0 +1,137 @@
+<!-- templates/edit_book.html -->
+{% extends "base.html" %}
+
+{% block title %}Edit {{ book.title }} - {{ library_name }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Edit Book</h2>
+    
+    <form method="post" class="book-form">
+        <div class="form-group">
+            <label for="title">Title *</label>
+            <input type="text" id="title" name="title" value="{{ book.title }}" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="author">Author *</label>
+            <input type="text" id="author" name="author" value="{{ book.author }}" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="isbn">ISBN</label>
+            <input type="text" id="isbn" name="isbn" value="{{ book.isbn or '' }}">
+            <label class="checkbox-label">
+                <input type="checkbox" name="lookup_details" value="true">
+                🔍 Lookup and update missing book details
+            </label>
+            <small class="form-help">
+                💡 Check this box to automatically fill in missing information from Google Books and OpenLibrary based on the current title and author.
+            </small>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label for="publisher">Publisher</label>
+                <input type="text" id="publisher" name="publisher" value="{{ book.publisher or '' }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="year">Year</label>
+                <input type="number" id="year" name="year" value="{{ book.year or '' }}" min="1000" max="2030">
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="genre">Genre</label>
+            <input type="text" id="genre" name="genre" value="{{ book.genre or '' }}">
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label for="location">Location</label>
+                {% if locations %}
+                    <select id="location" name="location">
+                        <option value="">Select location or enter new one</option>
+                        {% for location in locations %}
+                            <option value="{{ location }}" {% if book.location == location %}selected{% endif %}>{{ location }}</option>
+                        {% endfor %}
+                        <option value="__new__" {% if book.location and book.location not in locations %}selected{% endif %}>Enter new location...</option>
+                    </select>
+                    <input type="text" id="location-text" name="location_text" placeholder="Enter new location" 
+                           value="{% if book.location and book.location not in locations %}{{ book.location }}{% endif %}"
+                           {% if book.location and book.location not in locations %}style="display: block;"{% else %}style="display: none;"{% endif %}>
+                    <small class="form-help">
+                        💡 Choose an existing location or select "Enter new location..." to add a new one
+                    </small>
+                {% else %}
+                    <input type="text" id="location" name="location" value="{{ book.location or '' }}" placeholder="Living room shelf 2">
+                    <small class="form-help">
+                        💡 This will become a dropdown option for future books
+                    </small>
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                <label for="condition">Condition</label>
+                <select id="condition" name="condition">
+                    <option value="">Select condition</option>
+                    <option value="Excellent" {% if book.condition == "Excellent" %}selected{% endif %}>Excellent</option>
+                    <option value="Very Good" {% if book.condition == "Very Good" %}selected{% endif %}>Very Good</option>
+                    <option value="Good" {% if book.condition == "Good" %}selected{% endif %}>Good</option>
+                    <option value="Fair" {% if book.condition == "Fair" %}selected{% endif %}>Fair</option>
+                    <option value="Poor" {% if book.condition == "Poor" %}selected{% endif %}>Poor</option>
+                </select>
+            </div>
+        </div>
+        
+        <h3>Lending Information</h3>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="loaned_to">Loaned To</label>
+                <input type="text" id="loaned_to" name="loaned_to" value="{{ book.loaned_to or '' }}" placeholder="Person's name">
+            </div>
+            
+            <div class="form-group">
+                <label for="loaned_date">Loaned Date</label>
+                <input type="date" id="loaned_date" name="loaned_date" value="{{ book.loaned_date or '' }}">
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="due_date">Due Date</label>
+            <input type="date" id="due_date" name="due_date" value="{{ book.due_date or '' }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes" rows="3">{{ book.notes or '' }}</textarea>
+        </div>
+        
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Update Book</button>
+            <a href="/book/{{ book.id }}" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+
+<script>
+// Handle location dropdown
+document.addEventListener('DOMContentLoaded', function() {
+    const locationSelect = document.getElementById('location');
+    const locationText = document.getElementById('location-text');
+    
+    if (locationSelect && locationText) {
+        locationSelect.addEventListener('change', function() {
+            if (this.value === '__new__') {
+                locationText.style.display = 'block';
+                locationText.focus();
+            } else {
+                locationText.style.display = 'none';
+                locationText.value = '';
+            }
+        });
+    }
+});
+</script>
+{% endblock %}

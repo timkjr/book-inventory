@@ -1,0 +1,122 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="header-section">
+        <h2>Book Collection</h2>
+        <div class="search-and-filter">
+            <form method="get" class="search-form">
+                <input type="text" name="search" placeholder="Search books, authors, ISBN, notes..." value="{{ search or '' }}">
+                <button type="submit">Search</button>
+                {% if search or (view and filter_value) %}
+                    <a href="/" class="btn btn-secondary">Clear</a>
+                {% endif %}
+            </form>
+            
+            <div class="filter-section">
+                <div class="filter-dropdown">
+                    <label for="location-filter">Filter by Location:</label>
+                    <select id="location-filter" onchange="filterByLocation()">
+                        <option value="">All Locations</option>
+                        {% for location in locations %}
+                            <option value="{{ location }}" 
+                                {% if view == 'location' and filter_value == location %}selected{% endif %}>
+                                {{ location }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="filter-dropdown">
+                    <label for="genre-filter">Filter by Genre:</label>
+                    <select id="genre-filter" onchange="filterByGenre()">
+                        <option value="">All Genres</option>
+                        {% for genre in genres %}
+                            <option value="{{ genre }}" 
+                                {% if view == 'genre' and filter_value == genre %}selected{% endif %}>
+                                {{ genre }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {% if view and filter_value %}
+        <div class="filter-status">
+            <p>Showing books 
+                {% if view == 'location' %}in location: <strong>{{ filter_value }}</strong>{% endif %}
+                {% if view == 'genre' %}in genre: <strong>{{ filter_value }}</strong>{% endif %}
+                <a href="/" class="clear-filter">Clear filter</a>
+            </p>
+        </div>
+    {% endif %}
+    
+    {% if books %}
+        <div class="book-grid">
+            {% for book in books %}
+            <div class="book-card">
+                {% if book.cover_url %}
+                    <img src="{{ book.cover_url }}" alt="Cover" class="book-cover">
+                {% else %}
+                    <div class="book-cover-placeholder">📖</div>
+                {% endif %}
+                
+                <div class="book-info">
+                    <h3><a href="/book/{{ book.id }}">{{ book.title }}</a></h3>
+                    <p class="author">by {{ book.author }}</p>
+                    
+                    {% if book.location %}
+                        <p class="location">📍 {{ book.location }}</p>
+                    {% endif %}
+                    
+                    {% if book.genre %}
+                        <p class="genre">🏷️ {{ book.genre }}</p>
+                    {% endif %}
+                    
+                    {% if book.loaned_to %}
+                        <p class="loaned">🔄 Loaned to {{ book.loaned_to }}</p>
+                    {% endif %}
+                    
+                    {% if book.isbn %}
+                        <p class="isbn">ISBN: {{ book.isbn }}</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="empty-state">
+            <h3>No books found</h3>
+            <p>
+                {% if search %}No books match your search.{% endif %}
+                {% if view and filter_value %}No books found in the selected {{ view }}.{% endif %}
+                {% if not search and not (view and filter_value) %}Your library is empty.{% endif %}
+            </p>
+            <a href="/add" class="btn btn-primary">Add Your First Book</a>
+        </div>
+    {% endif %}
+</div>
+
+<script>
+function filterByLocation() {
+    const select = document.getElementById('location-filter');
+    if (select.value) {
+        window.location.href = `/?view=location&filter_value=${encodeURIComponent(select.value)}`;
+    } else {
+        window.location.href = '/';
+    }
+}
+
+function filterByGenre() {
+    const select = document.getElementById('genre-filter');
+    if (select.value) {
+        window.location.href = `/?view=genre&filter_value=${encodeURIComponent(select.value)}`;
+    } else {
+        window.location.href = '/';
+    }
+}
+</script>
+{% endblock %}

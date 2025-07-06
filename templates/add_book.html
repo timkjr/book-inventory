@@ -1,0 +1,117 @@
+<!-- templates/add_book.html -->
+{% extends "base.html" %}
+
+{% block title %}Add Book - {{ library_name }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Add New Book</h2>
+    
+    <form method="post" class="book-form">
+        <div class="form-group">
+            <label for="title">Title *</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="author">Author *</label>
+            <input type="text" id="author" name="author" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="isbn">ISBN</label>
+            <input type="text" id="isbn" name="isbn" placeholder="978-0-123456-78-9">
+            <label class="checkbox-label">
+                <input type="checkbox" name="lookup_metadata" value="true" checked>
+                Automatically lookup book details (works with Title + Author or ISBN)
+            </label>
+            <small class="form-help">
+                💡 Leave fields empty and check the box above to auto-fill from Google Books and OpenLibrary
+            </small>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label for="publisher">Publisher</label>
+                <input type="text" id="publisher" name="publisher">
+            </div>
+            
+            <div class="form-group">
+                <label for="year">Year</label>
+                <input type="number" id="year" name="year" min="1000" max="2030">
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="genre">Genre</label>
+            <input type="text" id="genre" name="genre" placeholder="Fiction, Biography, etc.">
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label for="location">Location</label>
+                {% if locations %}
+                    <select id="location" name="location">
+                        <option value="">Select location or enter new one</option>
+                        {% for location in locations %}
+                            <option value="{{ location }}">{{ location }}</option>
+                        {% endfor %}
+                        <option value="__new__">Enter new location...</option>
+                    </select>
+                    <input type="text" id="location-text" name="location_text" placeholder="Enter new location" style="display: none;">
+                    <small class="form-help">
+                        💡 Choose an existing location or select "Enter new location..." to add a new one
+                    </small>
+                {% else %}
+                    <input type="text" id="location" name="location" placeholder="Living room shelf 2">
+                    <small class="form-help">
+                        💡 This will become a dropdown option for future books
+                    </small>
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                <label for="condition">Condition</label>
+                <select id="condition" name="condition">
+                    <option value="">Select condition</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Very Good">Very Good</option>
+                    <option value="Good">Good</option>
+                    <option value="Fair">Fair</option>
+                    <option value="Poor">Poor</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Any additional notes about this book"></textarea>
+        </div>
+        
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Add Book</button>
+            <a href="/" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+
+<script>
+// Handle location dropdown
+document.addEventListener('DOMContentLoaded', function() {
+    const locationSelect = document.getElementById('location');
+    const locationText = document.getElementById('location-text');
+    
+    if (locationSelect && locationText) {
+        locationSelect.addEventListener('change', function() {
+            if (this.value === '__new__') {
+                locationText.style.display = 'block';
+                locationText.focus();
+            } else {
+                locationText.style.display = 'none';
+                locationText.value = '';
+            }
+        });
+    }
+});
+</script>
+{% endblock %}

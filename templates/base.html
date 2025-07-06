@@ -1,0 +1,29 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ library_name or "Personal Book Inventory" }}{% endblock %}</title>
+    <link href="/static/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <h1><a href="/">📚 {{ library_name or "Personal Library" }}</a></h1>
+            <div class="nav-links">
+                <a href="/">All Books</a>
+                <a href="/add">Add Book</a>
+                <a href="/loaned">Loaned Books</a>
+                <a href="/settings">Settings</a>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>

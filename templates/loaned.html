@@ -1,0 +1,43 @@
+<!-- templates/loaned.html -->
+{% extends "base.html" %}
+
+{% block title %}Loaned Books - {{ library_name }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Currently Loaned Books</h2>
+    
+    {% if books %}
+        <div class="loaned-list">
+            {% for book in books %}
+            <div class="loaned-item">
+                <div class="loaned-book-info">
+                    <h3><a href="/book/{{ book.id }}">{{ book.title }}</a></h3>
+                    <p class="author">by {{ book.author }}</p>
+                </div>
+                
+                <div class="loaned-details">
+                    <p><strong>Loaned to:</strong> {{ book.loaned_to }}</p>
+                    {% if book.loaned_date %}
+                        <p><strong>Date loaned:</strong> {{ book.loaned_date }}</p>
+                    {% endif %}
+                    {% if book.due_date %}
+                        <p><strong>Due date:</strong> {{ book.due_date }}</p>
+                    {% endif %}
+                </div>
+                
+                <div class="loaned-actions">
+                    <a href="/edit/{{ book.id }}" class="btn btn-primary">Edit</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="empty-state">
+            <h3>No books currently loaned</h3>
+            <p>All your books are safely at home!</p>
+            <a href="/" class="btn btn-primary">View All Books</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

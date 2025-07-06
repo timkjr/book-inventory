@@ -1,0 +1,18 @@
+# docker-compose.yml
+services:
+  book-inventory:
+    build: .
+    container_name: book-inventory
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - TZ=America/Chicago  # Adjust to your timezone
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
