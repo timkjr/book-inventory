@@ -1,0 +1,23 @@
+# Docker ignore for main inventory service
+bookshelf-scanner/
+*.md
+.git/
+.gitignore
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+.venv/
+venv/
+env/
+data/
+
+# Runtime and development files
+cache/
+logs.log
+test_*.py
+.env
+*.log
+DEBUGGING_SESSION_*.md

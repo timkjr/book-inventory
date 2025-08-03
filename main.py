@@ -1,13 +1,17 @@
-from fastapi import FastAPI, Request, Form, HTTPException
+from fastapi import FastAPI, Request, Form, HTTPException, File, UploadFile
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import HTMLResponse, RedirectResponse, Response, JSONResponse
+from fastapi.responses import HTMLResponse, RedirectResponse, Response, JSONResponse, StreamingResponse
 import sqlite3
 from datetime import datetime
-from typing import Optional
+from typing import Optional, List, Dict, Any
 import requests
 import json
 import os
+import re
+import asyncio
+import aiohttp
+from difflib import SequenceMatcher
 
 app = FastAPI(title="Personal Book Inventory")
 
@@ -17,6 +21,10 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Database setup
 DATABASE = "data/books.db"
+
+# Scanner service configuration
+SCANNER_SERVICE_URL = os.getenv("SCANNER_SERVICE_URL", "http://localhost:8001")
+SCANNER_API_URL = f"{SCANNER_SERVICE_URL}/api/predict/"
 
 def init_database():
     """Initialize the SQLite database"""
@@ -109,6 +117,106 @@ def get_unique_genres():
     conn.close()
     return [genre['genre'] for genre in genres]
 
+# Fuzzy matching helper functions for improved book search
+
+def string_similarity(a: str, b: str) -> float:
+    """Calculate similarity between two strings using SequenceMatcher"""
+    if not a or not b:
+        return 0.0
+    return SequenceMatcher(None, a.lower().strip(), b.lower().strip()).ratio()
+
+def normalize_string(s: str) -> str:
+    """Normalize string for matching - remove common words, punctuation, etc."""
+    if not s:
+        return ""
+    # Convert to lowercase and remove common punctuation
+    s = s.lower().strip()
+    # Remove common articles and prepositions that don't affect matching
+    common_words = ['the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by']
+    words = re.findall(r'\b\w+\b', s)  # Extract words, removing punctuation
+    words = [word for word in words if word not in common_words or len(words) <= 2]  # Keep common words in short titles
+    return ' '.join(words)
+
+def fuzzy_title_match(search_title: str, book_title: str) -> tuple[float, str]:
+    """Enhanced title matching with fuzzy logic"""
+    if not search_title or not book_title:
+        return 0.0, "no data"
+    
+    search_norm = normalize_string(search_title)
+    book_norm = normalize_string(book_title)
+    
+    # Exact match (normalized)
+    if search_norm == book_norm:
+        return 1.0, "exact match"
+    
+    # Check if one is a substring of the other
+    if search_norm in book_norm or book_norm in search_norm:
+        return 0.9, "substring match"
+    
+    # Word order permutation check - sometimes AI gets word order wrong
+    search_words = set(search_norm.split())
+    book_words = set(book_norm.split())
+    
+    # If all search words are in book title (or vice versa)
+    if search_words.issubset(book_words) or book_words.issubset(search_words):
+        return 0.85, "word subset match"
+    
+    # Check word intersection ratio
+    intersection = search_words.intersection(book_words)
+    union = search_words.union(book_words)
+    if union:
+        word_ratio = len(intersection) / len(union)
+        if word_ratio >= 0.6:  # 60% word overlap
+            return 0.7 + (word_ratio - 0.6) * 0.375, f"word overlap ({word_ratio:.2f})"
+    
+    # Fallback to edit distance similarity
+    similarity = string_similarity(search_norm, book_norm)
+    if similarity >= 0.6:
+        return similarity * 0.7, f"edit distance ({similarity:.2f})"
+    
+    return 0.0, "no match"
+
+def fuzzy_author_match(search_author: str, book_author: str) -> tuple[float, str]:
+    """Enhanced author matching with fuzzy logic"""
+    if not search_author or not book_author:
+        return 0.0 if search_author and book_author else 0.5, "missing data"  # Neutral if one is missing
+    
+    search_norm = normalize_string(search_author)
+    book_norm = normalize_string(book_author)
+    
+    # Exact match
+    if search_norm == book_norm:
+        return 1.0, "exact match"
+    
+    # Last name matching (common for author searches)
+    search_words = search_norm.split()
+    book_words = book_norm.split()
+    
+    if search_words and book_words:
+        # Check if last names match
+        if search_words[-1] == book_words[-1]:
+            return 0.9, "last name match"
+        
+        # Check if any significant word matches (length > 2)
+        significant_matches = []
+        for sw in search_words:
+            for bw in book_words:
+                if len(sw) > 2 and len(bw) > 2:
+                    sim = string_similarity(sw, bw)
+                    if sim >= 0.8:
+                        significant_matches.append(sim)
+        
+        if significant_matches:
+            avg_match = sum(significant_matches) / len(significant_matches)
+            return avg_match * 0.8, f"name similarity ({avg_match:.2f})"
+    
+    # Edit distance similarity
+    similarity = string_similarity(search_norm, book_norm)
+    if similarity >= 0.6:
+        return similarity * 0.7, f"edit distance ({similarity:.2f})"
+    
+    return 0.0, "no match"
+
 def get_library_name():
     """Get the current library name from settings"""
     conn = get_db_connection()
@@ -197,67 +305,47 @@ def search_google_books(title: str, author: str = None):
                         
                         print(f"DEBUG: Result {i+1}: '{book.get('title', '')}' by {book.get('authors', [])}")
                         
-                        # Calculate match score
-                        title_match = 0
-                        author_match = 0
+                        # Enhanced fuzzy matching
+                        title_score, title_reason = fuzzy_title_match(title, book_title)
                         
-                        # Title matching - more flexible
-                        title_lower = title.lower().strip()
-                        if title_lower == book_title:
-                            title_match = 3  # Exact match
-                            print(f"  Title: Exact match (3 points)")
-                        elif book_title.startswith(title_lower) or title_lower in book_title:
-                            title_match = 2  # Good match
-                            print(f"  Title: Good match (2 points)")
-                        elif any(word in book_title for word in title_lower.split() if len(word) > 3):
-                            title_match = 1  # Partial match
-                            print(f"  Title: Partial match (1 point)")
-                        else:
-                            print(f"  Title: No match (0 points)")
+                        # Convert to 0-3 scale for compatibility
+                        title_match = title_score * 3
+                        print(f"  Title: {title_reason} (score: {title_score:.2f} -> {title_match:.1f} points)")
                         
-                        # Author matching (if provided)
+                        # Author matching with fuzzy logic
                         if author:
-                            author_lower = author.lower().strip()
-                            author_words = [word for word in author_lower.split() if len(word) > 2]
-                            
+                            # Try matching against all authors in the book
+                            author_scores = []
                             for book_author in book_authors:
-                                # Check for exact match
-                                if author_lower == book_author:
-                                    author_match = 3
-                                    print(f"  Author: Exact match (3 points)")
-                                    break
-                                # Check for lastname match (common case)
-                                elif (author_words and book_author.split() and 
-                                      author_words[-1] == book_author.split()[-1]):
-                                    author_match = 2
-                                    print(f"  Author: Last name match (2 points)")
-                                    break
-                                # Check for partial name match
-                                elif any(word in book_author for word in author_words):
-                                    if author_match < 1:  # Don't downgrade
-                                        author_match = 1
-                                        print(f"  Author: Partial match (1 point)")
+                                auth_score, auth_reason = fuzzy_author_match(author, book_author)
+                                author_scores.append((auth_score, auth_reason, book_author))
                             
-                            if author_match == 0:
-                                print(f"  Author: No match (0 points)")
+                            # Use the best author match
+                            if author_scores:
+                                best_auth_score, best_auth_reason, matched_author = max(author_scores, key=lambda x: x[0])
+                                author_match = best_auth_score * 3  # Convert to 0-3 scale
+                                print(f"  Author: {best_auth_reason} vs '{matched_author}' (score: {best_auth_score:.2f} -> {author_match:.1f} points)")
+                            else:
+                                author_match = 0
+                                print(f"  Author: No authors found (0 points)")
                         else:
                             author_match = 1  # Don't penalize if no author provided
                             print(f"  Author: No author provided (1 point)")
                         
-                        # Calculate total score - title is more important
-                        total_score = title_match * 2 + author_match * 1
-                        print(f"  Total score: {total_score} (title:{title_match}*2 + author:{author_match}*1)")
+                        # Calculate total score - title is more important, using continuous scores
+                        total_score = title_score * 3 + (author_match / 3) * 1  # Weight title more heavily
+                        print(f"  Total score: {total_score:.2f} (title:{title_score:.2f}*3 + author:{author_match/3:.2f}*1)")
                         
-                        # Must have some title match to be considered
-                        if title_match > 0 and total_score > best_score:
+                        # Must have reasonable title match to be considered
+                        if title_score >= 0.3 and total_score > best_score:
                             best_score = total_score
                             best_match = book
                             print(f"  -> New best match!")
                     
                     print(f"DEBUG: Best match score for this query: {best_score}")
                     
-                    # If we found a good match, use it
-                    if best_match and best_score >= 3:  # Slightly higher threshold for better matches
+                    # If we found a good match, use it (lower threshold for fuzzy matching)
+                    if best_match and best_score >= 1.5:  # More lenient threshold for enhanced fuzzy matching
                         book = best_match
                         
                         # Extract ISBN (prefer ISBN-13, fallback to ISBN-10)
@@ -350,6 +438,177 @@ def enhanced_book_lookup(title: str = None, author: str = None, isbn: str = None
             return result
     
     return None
+
+# Scanner service communication functions
+
+async def check_scanner_service():
+    """Check if the scanner service is available"""
+    try:
+        async with aiohttp.ClientSession() as session:
+            async with session.get(SCANNER_SERVICE_URL, timeout=5) as response:
+                return response.status == 200
+    except Exception as e:
+        print(f"Scanner service check failed: {e}")
+        return False
+
+def clean_book_text(text: str) -> str:
+    """Clean book title/author text by removing quotes and extra punctuation"""
+    if not text:
+        return ""
+    
+    # Remove surrounding single and double quotes
+    text = text.strip()
+    if (text.startswith("'") and text.endswith("'")) or (text.startswith('"') and text.endswith('"')):
+        text = text[1:-1]
+    
+    # Remove trailing periods that aren't part of abbreviations
+    if text.endswith('.') and not text.endswith('Jr.') and not text.endswith('Sr.') and not text.endswith('Ph.D.'):
+        text = text[:-1]
+    
+    return text.strip()
+
+def parse_book_result(book_text: str) -> Optional[Dict[str, str]]:
+    """Parse book result from scanner - handles both direct format and descriptive text"""
+    if not book_text or book_text.strip() == "No book":
+        return None
+    
+    # Remove "Book N: " prefix
+    match = re.match(r'^Book \d+:\s*(.+)$', book_text.strip())
+    if match:
+        content = match.group(1)
+    else:
+        content = book_text.strip()
+    
+    print(f"DEBUG: Parsing content: '{content}'")
+    
+    # Strategy 1: Extract quoted titles and authors from descriptive text
+    title = None
+    author = None
+    
+    # Look for quoted title patterns - order matters, most specific first
+    title_patterns = [
+        r'(?:features|shows)\s+(?:the\s+)?title\s+"([^"]+)"',  # features the title "Book Name"
+        r'(?:the\s+)?title\s+(?:of\s+the\s+book\s+)?(?:is\s+)?"([^"]+)"',  # title of the book is "Book Name"
+        r'(?:with\s+the\s+)?title\s+"([^"]+)"',  # with the title "Book Name"
+        r'(?:^|\s)title\s+(?:is\s+)?"([^"]+)"',  # title "Book Name" (standalone)
+        r'"([^"]+)"\s+(?:written|by)',        # "Book Name" written/by
+    ]
+    
+    for pattern in title_patterns:
+        title_match = re.search(pattern, content, re.IGNORECASE)
+        if title_match:
+            title = clean_book_text(title_match.group(1))
+            print(f"DEBUG: Extracted title via pattern '{pattern}': '{title}'")
+            break
+    
+    # Look for quoted or named author patterns
+    author_patterns = [
+        r'(?:author|by)\s+(?:is\s+)?"([^"]+)"',    # author "Name"
+        r'(?:author\'?s?\s+name)\s+(?:is\s+)?"([^"]+)"',  # author's name "Name"
+        r'(?:by|author)\s+([A-Z][a-zA-Z\.\s]+?)(?:\s*$|\s+and\s|\s+&\s)',  # by AuthorName (unquoted, more flexible)
+        r'(?:and\s+the\s+)?author\'?s?\s+name\s+is\s+"([^"]+)"',  # author's name is "Name"
+    ]
+    
+    for pattern in author_patterns:
+        author_match = re.search(pattern, content, re.IGNORECASE)
+        if author_match:
+            author = clean_book_text(author_match.group(1))
+            print(f"DEBUG: Extracted author via pattern '{pattern}': '{author}'")
+            break
+    
+    # Strategy 2: Fallback to original " by " splitting for direct format
+    if not title:
+        if " by " in content:
+            parts = content.rsplit(" by ", 1)  # Split from the right to handle titles with "by"
+            title = clean_book_text(parts[0])
+            if not author:  # Only use if we didn't find author already
+                author = clean_book_text(parts[1])
+            print(f"DEBUG: Fallback split - Title: '{title}', Author: '{author}'")
+        else:
+            # If no "by" found, treat entire content as title
+            title = clean_book_text(content)
+            print(f"DEBUG: Using entire content as title: '{title}'")
+    
+    # Clean up extracted data
+    if not title:
+        return None
+        
+    if not author:
+        author = ""
+    
+    print(f"DEBUG: Final result - Title: '{title}', Author: '{author}'")
+    
+    return {
+        "title": title,
+        "author": author
+    }
+
+async def call_scanner_api(image_file: UploadFile) -> List[Dict[str, str]]:
+    """Call the scanner API and return list of detected books"""
+    detected_books = []
+    
+    # Create form data
+    form_data = aiohttp.FormData()
+    form_data.add_field('file', await image_file.read(), 
+                       filename=image_file.filename, 
+                       content_type=image_file.content_type)
+    
+    try:
+        print(f"Calling scanner API at: {SCANNER_API_URL}")
+        # Configure client with larger chunk size for base64 images
+        connector = aiohttp.TCPConnector(limit=100)
+        timeout = aiohttp.ClientTimeout(total=600)
+        async with aiohttp.ClientSession(connector=connector, timeout=timeout, 
+                                       read_bufsize=1024*1024*10) as session:
+            async with session.post(SCANNER_API_URL, data=form_data) as response:
+                print(f"Scanner API response status: {response.status}")
+                print(f"Scanner API response headers: {dict(response.headers)}")
+                
+                if response.status != 200:
+                    response_text = await response.text()
+                    print(f"Scanner API error response: {response_text}")
+                    raise HTTPException(status_code=500, detail=f"Scanner service error: {response.status} - {response_text}")
+                
+                print("Reading streaming response from scanner...")
+                line_count = 0
+                async for line in response.content:
+                    if line:
+                        line_count += 1
+                        try:
+                            line_text = line.decode('utf-8').strip()
+                            print(f"Scanner response line {line_count}: {line_text[:100]}...")
+                            if line_text:
+                                result = json.loads(line_text)
+                                if result.get('success') and result.get('data'):
+                                    data = result['data']
+                                    # Skip the first response (segmented image)
+                                    if not data.startswith('data:image/'):
+                                        parsed_book = parse_book_result(data)
+                                        if parsed_book:
+                                            print(f"Parsed book: {parsed_book}")
+                                            detected_books.append(parsed_book)
+                        except json.JSONDecodeError as je:
+                            print(f"JSON decode error on line {line_count}: {je}")
+                            continue
+                        except Exception as e:
+                            print(f"Error processing scanner response line {line_count}: {e}")
+                            continue
+                
+                print(f"Scanner API completed. Total lines: {line_count}, Books found: {len(detected_books)}")
+                
+    except aiohttp.ClientError as ce:
+        print(f"HTTP client error calling scanner API: {ce}")
+        raise HTTPException(status_code=500, detail=f"Scanner service connection error: {str(ce)}")
+    except asyncio.TimeoutError:
+        print("Scanner API timeout after 600 seconds (10 minutes)")
+        raise HTTPException(status_code=500, detail="Scanner service timeout - AI processing took longer than 10 minutes")
+    except Exception as e:
+        print(f"Unexpected error calling scanner API: {type(e).__name__}: {e}")
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"Scanner service error: {str(e)}")
+    
+    return detected_books
 
 @app.on_event("startup")
 async def startup_event():
@@ -686,6 +945,235 @@ async def loaned_books(request: Request):
         "request": request, 
         "books": books,
         "library_name": library_name
+    })
+
+# Scanner routes
+@app.get("/scan-bookshelf", response_class=HTMLResponse)
+async def scan_bookshelf_form(request: Request):
+    """Show bookshelf scanning form"""
+    library_name = get_library_name()
+    scanner_available = await check_scanner_service()
+    locations = get_unique_locations()
+    return templates.TemplateResponse("scan_bookshelf.html", {
+        "request": request,
+        "library_name": library_name,
+        "scanner_available": scanner_available,
+        "locations": locations
+    })
+
+@app.post("/scan-bookshelf")
+async def scan_bookshelf(request: Request, image: UploadFile = File(...)):
+    """Process bookshelf image and return detected books with metadata enhancement"""
+    # Check if scanner service is available
+    if not await check_scanner_service():
+        raise HTTPException(status_code=503, detail="Scanner service is not available")
+    
+    # Validate file type
+    if not image or not image.content_type or not image.content_type.startswith("image/"):
+        raise HTTPException(status_code=400, detail="File must be an image")
+    
+    try:
+        # Call scanner API to get raw detections
+        detected_books = await call_scanner_api(image)
+        
+        # Only filter out exact duplicate titles (not partial matches)
+        def is_exact_duplicate(title1: str, title2: str) -> bool:
+            if not title1 or not title2:
+                return False
+            return title1.lower().strip() == title2.lower().strip()
+        
+        unique_books = []
+        for book in detected_books:
+            title = book.get("title", "").strip()
+            if not any(is_exact_duplicate(title, existing.get("title", "")) for existing in unique_books):
+                unique_books.append(book)
+            else:
+                print(f"DEBUG: Filtered exact duplicate: '{title}'")
+        
+        print(f"DEBUG: Original books: {len(detected_books)}, After filtering: {len(unique_books)}")
+        
+        # Enhance each book with metadata lookup
+        enhanced_books = []
+        for book in unique_books:
+            title = book.get("title", "").strip()
+            author = book.get("author", "").strip()
+            
+            # Perform metadata lookup to enhance the detection
+            metadata = None
+            if title:
+                metadata = enhanced_book_lookup(title=title, author=author)
+            
+            # Create enhanced book data
+            enhanced_book = {
+                "title": title,
+                "author": author or "Unknown Author",
+                "original_title": title,  # Keep original for reference
+                "original_author": author,  # Keep original for reference
+                "confidence": "medium",  # Default confidence level
+                "metadata_found": metadata is not None
+            }
+            
+            # Add metadata if found
+            if metadata:
+                # Use metadata to potentially improve title/author
+                metadata_title = metadata.get("title", "").strip()
+                metadata_author = metadata.get("author", "").strip()
+                
+                # If metadata provides better quality data, suggest it
+                if metadata_title and len(metadata_title) > len(title):
+                    enhanced_book["suggested_title"] = metadata_title
+                    enhanced_book["confidence"] = "high"
+                    
+                if metadata_author and metadata_author != "Unknown Author" and not author:
+                    enhanced_book["suggested_author"] = metadata_author
+                    enhanced_book["author"] = metadata_author
+                    enhanced_book["confidence"] = "high"
+                
+                # Add additional metadata for preview
+                enhanced_book.update({
+                    "isbn": metadata.get("isbn"),
+                    "publisher": metadata.get("publisher"),
+                    "year": metadata.get("year"),
+                    "genre": metadata.get("genre"),
+                    "cover_url": metadata.get("cover_url"),
+                    "description": metadata.get("description"),
+                    "page_count": metadata.get("page_count")
+                })
+            
+            enhanced_books.append(enhanced_book)
+        
+        # Return enhanced books for user confirmation
+        return JSONResponse({
+            "success": True,
+            "detected_books": enhanced_books,
+            "total_books": len(enhanced_books),
+            "enhanced": True  # Flag to indicate metadata enhancement was applied
+        })
+    
+    except Exception as e:
+        return JSONResponse({
+            "success": False,
+            "error": str(e)
+        }, status_code=500)
+
+@app.post("/api/scan-and-add")
+async def scan_and_add_books(request: Request, books_data: dict):
+    """Add multiple books from scan results to inventory"""
+    print(f"=== SCAN AND ADD DEBUG ===")
+    print(f"Received books_data: {books_data}")
+    
+    books_to_add = books_data.get("books", [])
+    print(f"Books to add: {books_to_add}")
+    print(f"Number of books to add: {len(books_to_add)}")
+    
+    if not books_to_add:
+        print("ERROR: No books provided in request")
+        raise HTTPException(status_code=400, detail="No books provided")
+    
+    added_books = []
+    errors = []
+    
+    for i, book_data in enumerate(books_to_add):
+        print(f"\n--- Processing book {i+1}/{len(books_to_add)} ---")
+        print(f"Book data: {book_data}")
+        try:
+            title = book_data.get("title", "").strip()
+            author = book_data.get("author", "").strip()
+            print(f"Extracted title: '{title}'")
+            print(f"Extracted author: '{author}'")
+            
+            if not title:
+                error_msg = f"Book missing title: {book_data}"
+                print(f"ERROR: {error_msg}")
+                errors.append(error_msg)
+                continue
+                
+            if not author:
+                author = "Unknown Author"
+                print(f"Setting author to: '{author}'")
+            
+            # Enhanced metadata lookup
+            print(f"Starting metadata lookup for: '{title}' by '{author}'")
+            metadata = enhanced_book_lookup(title=title, author=author)
+            print(f"Metadata lookup result: {metadata}")
+            
+            # Prepare book data for database insertion
+            book_to_insert = {
+                "title": title,
+                "author": author,
+                "isbn": metadata.get("isbn") if metadata else None,
+                "publisher": metadata.get("publisher") if metadata else None,
+                "year": metadata.get("year") if metadata else None,
+                "genre": metadata.get("genre") if metadata else None,
+                "location": book_data.get("location"),
+                "condition": book_data.get("condition"),
+                "notes": book_data.get("notes"),
+                "cover_url": metadata.get("cover_url") if metadata else None,
+                "google_books_link": metadata.get("google_books_link") if metadata else None,
+                "description": metadata.get("description") if metadata else None,
+                "page_count": metadata.get("page_count") if metadata else None
+            }
+            print(f"Prepared book_to_insert: {book_to_insert}")
+            
+            # Insert into database
+            print("Attempting database insertion...")
+            conn = get_db_connection()
+            try:
+                cursor = conn.execute("""
+                    INSERT INTO books (title, author, isbn, publisher, year, genre, location, condition, notes, cover_url, google_books_link, description, page_count)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """, (
+                    book_to_insert["title"],
+                    book_to_insert["author"],
+                    book_to_insert["isbn"],
+                    book_to_insert["publisher"],
+                    book_to_insert["year"],
+                    book_to_insert["genre"],
+                    book_to_insert["location"],
+                    book_to_insert["condition"],
+                    book_to_insert["notes"],
+                    book_to_insert["cover_url"],
+                    book_to_insert["google_books_link"],
+                    book_to_insert["description"],
+                    book_to_insert["page_count"]
+                ))
+                
+                book_id = cursor.lastrowid
+                print(f"Database insertion successful! Book ID: {book_id}")
+                conn.commit()
+                conn.close()
+                
+                added_books.append({
+                    "id": book_id,
+                    "title": title,
+                    "author": author
+                })
+                print(f"Successfully added book: {title} by {author}")
+                
+            except Exception as db_error:
+                print(f"DATABASE ERROR: {str(db_error)}")
+                conn.close()
+                raise db_error
+            
+        except Exception as e:
+            error_msg = f"Error adding book '{title if 'title' in locals() else 'unknown'}': {str(e)}"
+            print(f"EXCEPTION: {error_msg}")
+            import traceback
+            traceback.print_exc()
+            errors.append(error_msg)
+    
+    print(f"\n=== SCAN AND ADD SUMMARY ===")
+    print(f"Total books processed: {len(books_to_add)}")
+    print(f"Successfully added: {len(added_books)}")
+    print(f"Errors: {len(errors)}")
+    print(f"Added books: {added_books}")
+    print(f"Errors list: {errors}")
+    
+    return JSONResponse({
+        "success": True,
+        "added_books": added_books,
+        "errors": errors,
+        "total_added": len(added_books)
     })
 
 # API endpoints for future computer vision integration

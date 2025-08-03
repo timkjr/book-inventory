@@ -6,9 +6,21 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./data:/app/data
+      # NAS persistent data
+      - ${APPDATA_DIR}/book-inventory/data:/app/data
+      
+      # Local development bind-mounts
+      - ./main.py:/app/main.py
+      - ./templates:/app/templates
+      - ./static:/app/static
+      
+      # Local cache
+      - ${CACHE_DIR}/pip:/home/bookuser/.cache/pip
     environment:
       - TZ=America/Chicago  # Adjust to your timezone
+      - SCANNER_SERVICE_URL=http://bookshelf-scanner:8001
+    depends_on:
+      - bookshelf-scanner
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/"]
@@ -16,3 +28,39 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
+
+  bookshelf-scanner:
+    build: 
+      context: ./bookshelf-scanner
+      dockerfile: backend/Dockerfile
+    container_name: bookshelf-scanner
+    ports:
+      - "8001:8001"
+    volumes:
+      # NAS persistent data
+      - ${APPDATA_DIR}/bookshelf-scanner/models:/app/models
+      - ${APPDATA_DIR}/bookshelf-scanner/models:/app/backend-models
+      - ${APPDATA_DIR}/bookshelf-scanner/output:/app/output
+      
+      # Local development bind-mounts
+      - ./bookshelf-scanner/backend/src:/app/src
+      - ./bookshelf-scanner/backend/run_server.py:/app/run_server.py
+      - ./bookshelf-scanner/ai:/ai
+      
+      # Training models bind-mount
+      - ./training:/app/training
+      
+      # Local cache (build-time optimization)
+      - ${CACHE_DIR}/poetry:/home/scanuser/.cache/poetry
+    tmpfs:
+      - /home/scanuser/.cache/matplotlib:size=100m
+      - /tmp/app-cache:size=200m
+    environment:
+      - TZ=America/Chicago  # Adjust to your timezone
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/"]
+      interval: 60s
+      timeout: 30s
+      retries: 3
+      start_period: 120s  # Scanner needs more time to load AI models

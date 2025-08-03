@@ -1,0 +1,3 @@
+[submodule "bookshelf-scanner"]
+	path = bookshelf-scanner
+	url = https://github.com/timkjr/bookshelf-scanner-nonCuda.git

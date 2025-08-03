@@ -1,0 +1,1926 @@
+bookshelf-scanner  | INFO:     Will watch for changes in these directories: ['/app']
+bookshelf-scanner  | INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+bookshelf-scanner  | INFO:     Started reloader process [1] using WatchFiles
+bookshelf-scanner  | Creating new Ultralytics Settings v0.0.6 file ✅ 
+bookshelf-scanner  | View Ultralytics Settings with 'yolo settings' or at '/home/scanuser/.config/Ultralytics/settings.json'
+bookshelf-scanner  | Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.
+bookshelf-scanner  | llama_model_loader: loaded meta data with 20 key-value pairs and 245 tensors from backend-models/moondream2-text-model-Q4_K_M.gguf (version GGUF V3 (latest))
+bookshelf-scanner  | llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+bookshelf-scanner  | llama_model_loader: - kv   0:                       general.architecture str              = phi2
+bookshelf-scanner  | llama_model_loader: - kv   1:                               general.name str              = moondream2
+bookshelf-scanner  | llama_model_loader: - kv   2:                        phi2.context_length u32              = 2048
+bookshelf-scanner  | llama_model_loader: - kv   3:                      phi2.embedding_length u32              = 2048
+bookshelf-scanner  | llama_model_loader: - kv   4:                   phi2.feed_forward_length u32              = 8192
+bookshelf-scanner  | llama_model_loader: - kv   5:                           phi2.block_count u32              = 24
+bookshelf-scanner  | llama_model_loader: - kv   6:                  phi2.attention.head_count u32              = 32
+bookshelf-scanner  | llama_model_loader: - kv   7:               phi2.attention.head_count_kv u32              = 32
+bookshelf-scanner  | llama_model_loader: - kv   8:          phi2.attention.layer_norm_epsilon f32              = 0.000010
+bookshelf-scanner  | llama_model_loader: - kv   9:                  phi2.rope.dimension_count u32              = 32
+bookshelf-scanner  | llama_model_loader: - kv  10:                          general.file_type u32              = 15
+bookshelf-scanner  | llama_model_loader: - kv  11:               tokenizer.ggml.add_bos_token bool             = false
+bookshelf-scanner  | llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = gpt2
+bookshelf-scanner  | llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,51200]   = ["!", "\"", "#", "$", "%", "&", "'", ...
+bookshelf-scanner  | llama_model_loader: - kv  14:                  tokenizer.ggml.token_type arr[i32,51200]   = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+bookshelf-scanner  | llama_model_loader: - kv  15:                      tokenizer.ggml.merges arr[str,50000]   = ["Ġ t", "Ġ a", "h e", "i n", "r e",...
+bookshelf-scanner  | llama_model_loader: - kv  16:                tokenizer.ggml.bos_token_id u32              = 50256
+bookshelf-scanner  | llama_model_loader: - kv  17:                tokenizer.ggml.eos_token_id u32              = 50256
+bookshelf-scanner  | llama_model_loader: - kv  18:            tokenizer.ggml.unknown_token_id u32              = 50256
+bookshelf-scanner  | llama_model_loader: - kv  19:               general.quantization_version u32              = 2
+bookshelf-scanner  | llama_model_loader: - type  f32:  147 tensors
+bookshelf-scanner  | llama_model_loader: - type q4_K:   61 tensors
+bookshelf-scanner  | llama_model_loader: - type q5_K:   24 tensors
+bookshelf-scanner  | llama_model_loader: - type q6_K:   13 tensors
+bookshelf-scanner  | print_info: file format = GGUF V3 (latest)
+bookshelf-scanner  | print_info: file type   = Q4_K - Medium
+bookshelf-scanner  | print_info: file size   = 874.05 MiB (5.17 BPW) 
+bookshelf-scanner  | load: missing pre-tokenizer type, using: 'default'
+bookshelf-scanner  | load:                                             
+bookshelf-scanner  | load: ************************************        
+bookshelf-scanner  | load: GENERATION QUALITY WILL BE DEGRADED!        
+bookshelf-scanner  | load: CONSIDER REGENERATING THE MODEL             
+bookshelf-scanner  | load: ************************************        
+book-inventory     | INFO:     Started server process [1]
+book-inventory     | INFO:     Waiting for application startup.
+book-inventory     | INFO:     Application startup complete.
+book-inventory     | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+book-inventory     | INFO:     127.0.0.1:35080 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:53190 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:34634 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:59326 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:48038 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:37412 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:37300 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     Shutting down
+book-inventory     | INFO:     Waiting for application shutdown.
+book-inventory     | INFO:     Application shutdown complete.
+book-inventory     | INFO:     Finished server process [1]
+book-inventory     | INFO:     Started server process [1]
+book-inventory     | INFO:     Waiting for application startup.
+book-inventory     | INFO:     Application startup complete.
+book-inventory     | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+book-inventory     | INFO:     127.0.0.1:52742 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:49084 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:49826 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:58500 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     10.10.10.1:29062 - "GET /scan-bookshelf HTTP/1.1" 200 OK
+book-inventory     | Calling scanner API at: http://bookshelf-scanner:8001/api/predict/
+book-inventory     | INFO:     127.0.0.1:53630 - "GET / HTTP/1.1" 200 OK
+book-inventory     | Scanner API response status: 200
+book-inventory     | Scanner API response headers: {'Date': 'Wed, 16 Jul 2025 04:25:37 GMT', 'Server': 'uvicorn', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked'}
+book-inventory     | Reading streaming response from scanner...
+book-inventory     | Scanner response line 1: {"success":true,"error":null,"data":"data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBA...
+book-inventory     | INFO:     127.0.0.1:57030 - "GET / HTTP/1.1" 200 OK
+book-inventory     | Scanner response line 2: {"success":true,"error":null,"data":"Book 1: The image shows the spine of a book with the title \"Wh...
+book-inventory     | DEBUG: Cleaned book - Title: 'The image shows the spine of a book with the title "What's So Amazing About Grace?" written in white. The author's name is also visible on the spine', Author: ''
+book-inventory     | Parsed book: {'title': 'The image shows the spine of a book with the title "What\'s So Amazing About Grace?" written in white. The author\'s name is also visible on the spine', 'author': ''}
+book-inventory     | Scanner response line 3: {"success":true,"error":null,"data":"Book 2: The spine of the book is blue and white. It features th...
+book-inventory     | DEBUG: Cleaned book - Title: 'The spine of the book is blue and white. It features the title "Kisses from Kate" written in white letters, and the author's name "Katie Davis" written in smaller white letters below the title', Author: ''
+book-inventory     | Parsed book: {'title': 'The spine of the book is blue and white. It features the title "Kisses from Kate" written in white letters, and the author\'s name "Katie Davis" written in smaller white letters below the title', 'author': ''}
+book-inventory     | INFO:     127.0.0.1:59078 - "GET / HTTP/1.1" 200 OK
+book-inventory     | Scanner response line 4: {"success":true,"error":null,"data":"Book 3: The spine of the book is gray and features the title \"...
+book-inventory     | DEBUG: Cleaned book - Title: 'The spine of the book is gray and features the title "The Book of the Dun Cow"', Author: 'Wangerin'
+book-inventory     | Parsed book: {'title': 'The spine of the book is gray and features the title "The Book of the Dun Cow"', 'author': 'Wangerin'}
+book-inventory     | INFO:     127.0.0.1:45842 - "GET / HTTP/1.1" 200 OK
+book-inventory     | Scanner response line 5: {"success":true,"error":null,"data":"Book 4: The book spine features the title \"Cross Roads\" and t...
+book-inventory     | DEBUG: Cleaned book - Title: 'The book spine features the title "Cross Roads" and the author "Wm. Paul Young"', Author: ''
+book-inventory     | Parsed book: {'title': 'The book spine features the title "Cross Roads" and the author "Wm. Paul Young"', 'author': ''}
+book-inventory     | INFO:     127.0.0.1:35312 - "GET / HTTP/1.1" 200 OK
+book-inventory     | Scanner response line 6: {"success":true,"error":null,"data":"Book 5: The spine of the book is gray and white. The title of t...
+book-inventory     | DEBUG: Cleaned book - Title: 'The spine of the book is gray and white. The title of the book is "The Book of the Dun Cow" and the author's name is "Wangerin"', Author: ''
+book-inventory     | Parsed book: {'title': 'The spine of the book is gray and white. The title of the book is "The Book of the Dun Cow" and the author\'s name is "Wangerin"', 'author': ''}
+book-inventory     | Scanner API completed. Total lines: 6, Books found: 5
+book-inventory     | DEBUG: Attempt 1: Trying query 'intitle:The image shows the spine of a book with the title "What's So Amazing About Grace?" written in white. The author's name is also visible on the spine'
+book-inventory     | DEBUG: Query 'intitle:The image shows the spine of a book with the title "What's So Amazing About Grace?" written in white. The author's name is also visible on the spine' returned 6 results
+book-inventory     | DEBUG: Result 1: 'What's So Amazing About Grace?' by ['Philip Yancey']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 3.03 (title:0.90*3 + author:0.33*1)
+book-inventory     |   -> New best match!
+book-inventory     | DEBUG: Result 2: 'What's So Amazing About Grace? Revised and Updated' by ['Philip Yancey']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 3: 'Amazing Grace' by ['George Whitefield Ridout']
+book-inventory     |   Title: word subset match (score: 0.85 -> 2.5 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 2.88 (title:0.85*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 4: 'What's So Amazing about Grace? Revised and Updated' by ['Philip Yancey']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 5: 'What's So Amazing about Grace?' by ['Philip Yancey']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 3.03 (title:0.90*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 6: 'God's Amazing Grace' by ['Ellen Gould Harmon White']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Best match score for this query: 3.0333333333333337
+book-inventory     | DEBUG: SUCCESS! Returning match for 'What's So Amazing About Grace?' by ['Philip Yancey'] (score: 3.0333333333333337)
+book-inventory     | DEBUG: Attempt 1: Trying query 'intitle:The spine of the book is blue and white. It features the title "Kisses from Kate" written in white letters, and the author's name "Katie Davis" written in smaller white letters below the title'
+book-inventory     | DEBUG: Query 'intitle:The spine of the book is blue and white. It features the title "Kisses from Kate" written in white letters, and the author's name "Katie Davis" written in smaller white letters below the title' returned no results
+book-inventory     | DEBUG: Attempt 2: Trying query 'The spine of the book is blue and white. It features the title "Kisses from Kate" written in white letters, and the author's name "Katie Davis" written in smaller white letters below the title'
+book-inventory     | DEBUG: Query 'The spine of the book is blue and white. It features the title "Kisses from Kate" written in white letters, and the author's name "Katie Davis" written in smaller white letters below the title' returned 10 results
+book-inventory     | DEBUG: Result 1: 'The College Writer' by ['Randall VanderMey', 'Verne Meyer', 'John Van Rys', 'Patrick Sebranek', 'Dave Kemper']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 2: 'River Teeth' by ['David James Duncan']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 3: 'Tales the Devil Told Me' by ['Jen Fawkes']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 4: 'Teaching Writing from a Writer's Point of View' by ['Terry Hermsen', 'Robert Fox']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 5: 'Nimrod of the Sea, Or, The American Whaleman. [With Illustrations.]' by ['William Morris Davis']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 6: 'Dixie After the War' by ['Myrta Lockett Avary']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 7: 'Portrait Of A Killer: Jack The Ripper -- Case Closed' by ['Patricia Cornwell']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 8: 'Write Like the Masters' by ['William Cane']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 9: 'Fandom as Methodology' by ['Catherine Grant', 'Kate Random Love']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 10: 'And Tango Makes Three' by ['Justin Richardson', 'Peter Parnell']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Best match score for this query: 0
+book-inventory     | DEBUG: Query 'The spine of the book is blue and white. It features the title "Kisses from Kate" written in white letters, and the author's name "Katie Davis" written in smaller white letters below the title' didn't produce good enough matches (best: 0)
+book-inventory     | DEBUG: All query strategies failed. No good match found.
+book-inventory     | DEBUG: Attempt 1: Trying query 'The spine of the book is gray and features the title "The Book of the Dun Cow" Wangerin'
+book-inventory     | DEBUG: Query 'The spine of the book is gray and features the title "The Book of the Dun Cow" Wangerin' returned 10 results
+book-inventory     | DEBUG: Result 1: 'As for Me and My House' by ['Walter Wangerin']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 0.90 (title:0.00*3 + author:0.90*1)
+book-inventory     | DEBUG: Result 2: 'The Book of God' by ['Walter Wangerin Jr.']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: name similarity (1.00) vs 'walter wangerin jr.' (score: 0.80 -> 2.4 points)
+book-inventory     |   Total score: 0.80 (title:0.00*3 + author:0.80*1)
+book-inventory     | DEBUG: Result 3: 'The Book of the New Sun' by ['Gene Wolfe']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'gene wolfe' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Result 4: 'Forgotten Ages (The Complete Series)' by ['Lindsay Buroker']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'lindsay buroker' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Result 5: 'Something Wicked This Way Comes' by ['Ray Bradbury']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'ray bradbury' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Result 6: 'The Book of the Dun Cow' by ['Walter Wangerin']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 3.60 (title:0.90*3 + author:0.90*1)
+book-inventory     |   -> New best match!
+book-inventory     | DEBUG: Result 7: 'The Second Book of the Dun Cow' by ['Walter Wangerin']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 0.90 (title:0.00*3 + author:0.90*1)
+book-inventory     | DEBUG: Result 8: 'Tales Before Tolkien: The Roots of Modern Fantasy' by ['Douglas A. Anderson', 'Ludwig Tieck', 'George MacDonald', 'E. Nesbit', 'Richard Garnett']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'douglas a. anderson' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Result 9: 'Families Where Grace Is in Place' by ['Jeff VanVonderen']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'jeff vanvonderen' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Result 10: 'A Crazy, Holy Grace' by ['Frederick Buechner']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'frederick buechner' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Best match score for this query: 3.6
+book-inventory     | DEBUG: SUCCESS! Returning match for 'The Book of the Dun Cow' by ['Walter Wangerin'] (score: 3.6)
+book-inventory     | DEBUG: Attempt 1: Trying query 'intitle:The book spine features the title "Cross Roads" and the author "Wm. Paul Young"'
+book-inventory     | DEBUG: Query 'intitle:The book spine features the title "Cross Roads" and the author "Wm. Paul Young"' returned 10 results
+book-inventory     | DEBUG: Result 1: 'The General Evening Post' by []
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 2: 'The Illustrated London News' by []
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 3: 'The Literary Digest' by []
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 4: 'The Interior' by []
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 5: 'The Spectator' by []
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 6: 'The Examiner' by []
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 7: 'The Athenæum' by []
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 8: 'The Athenaeum' by []
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 9: 'The Index' by []
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 10: '“The” Athenaeum' by ['James-Silk Buckingham']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Best match score for this query: 0
+book-inventory     | DEBUG: Query 'intitle:The book spine features the title "Cross Roads" and the author "Wm. Paul Young"' didn't produce good enough matches (best: 0)
+book-inventory     | DEBUG: Attempt 2: Trying query 'The book spine features the title "Cross Roads" and the author "Wm. Paul Young"'
+book-inventory     | DEBUG: Query 'The book spine features the title "Cross Roads" and the author "Wm. Paul Young"' returned 10 results
+book-inventory     | DEBUG: Result 1: 'Eve' by ['Wm. Paul Young']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 2: 'The Shack Revisited' by ['C. Baxter Kruger']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 3: 'The Shack' by ['Wm. Paul Young']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 4: 'Lies We Believe About God' by ['Wm. Paul Young']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 5: 'The Shack Study Guide' by ['Wm. Paul Young', 'Brad Robison']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 6: 'The Shack' by ['Wm. Paul Young']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 7: 'The Wounded Heart Companion Workbook' by ['Dan Allender']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 8: 'The Book of Obeah' by ['Sandra Carrington-Smith']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 9: 'Grace Walk' by ['Steve McVey']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 10: 'The Longevity Diet' by ['Brian M. Delaney', 'Lisa Walford']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Best match score for this query: 0
+book-inventory     | DEBUG: Query 'The book spine features the title "Cross Roads" and the author "Wm. Paul Young"' didn't produce good enough matches (best: 0)
+book-inventory     | DEBUG: All query strategies failed. No good match found.
+book-inventory     | DEBUG: Attempt 1: Trying query 'intitle:The spine of the book is gray and white. The title of the book is "The Book of the Dun Cow" and the author's name is "Wangerin"'
+book-inventory     | DEBUG: Query 'intitle:The spine of the book is gray and white. The title of the book is "The Book of the Dun Cow" and the author's name is "Wangerin"' returned 3 results
+book-inventory     | DEBUG: Result 1: 'The Book of the Dun Cow' by ['Walter Wangerin']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 3.03 (title:0.90*3 + author:0.33*1)
+book-inventory     |   -> New best match!
+book-inventory     | DEBUG: Result 2: 'The Book of the Dun Cow' by ['Walter Wangerin']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 3.03 (title:0.90*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 3: 'The Cow at the Window' by ['Alex Niven']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 0.33 (title:0.00*3 + author:0.33*1)
+book-inventory     | DEBUG: Best match score for this query: 3.0333333333333337
+book-inventory     | DEBUG: SUCCESS! Returning match for 'The Book of the Dun Cow' by ['Walter Wangerin'] (score: 3.0333333333333337)
+book-inventory     | INFO:     10.10.10.1:23709 - "POST /scan-bookshelf HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:36274 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:42080 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:48690 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:42802 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:54878 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:39772 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:53854 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:46824 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:40048 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:46842 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:46276 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:56652 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:37316 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:50458 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:56514 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:41566 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:56182 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:59060 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:58210 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:33462 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:40798 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:50976 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     Shutting down
+book-inventory     | INFO:     Waiting for application shutdown.
+book-inventory     | INFO:     Application shutdown complete.
+book-inventory     | INFO:     Finished server process [1]
+book-inventory     | INFO:     Started server process [1]
+book-inventory     | INFO:     Waiting for application startup.
+book-inventory     | INFO:     Application startup complete.
+book-inventory     | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+book-inventory     | INFO:     127.0.0.1:50988 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     Shutting down
+book-inventory     | INFO:     Waiting for application shutdown.
+book-inventory     | INFO:     Application shutdown complete.
+book-inventory     | INFO:     Finished server process [1]
+book-inventory     | INFO:     Started server process [1]
+book-inventory     | INFO:     Waiting for application startup.
+book-inventory     | INFO:     Application startup complete.
+book-inventory     | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+book-inventory     | INFO:     127.0.0.1:41102 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:41520 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     10.10.10.1:48972 - "GET /scan-bookshelf HTTP/1.1" 200 OK
+book-inventory     | Calling scanner API at: http://bookshelf-scanner:8001/api/predict/
+book-inventory     | Scanner API response status: 200
+book-inventory     | Scanner API response headers: {'Date': 'Wed, 16 Jul 2025 04:39:49 GMT', 'Server': 'uvicorn', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked'}
+book-inventory     | Reading streaming response from scanner...
+book-inventory     | Scanner response line 1: {"success":true,"error":null,"data":"data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBA...
+book-inventory     | INFO:     127.0.0.1:46574 - "GET / HTTP/1.1" 200 OK
+book-inventory     | Scanner response line 2: {"success":true,"error":null,"data":"Book 1: The image shows the spine of a book with the title \"Wh...
+book-inventory     | DEBUG: Parsing content: 'The image shows the spine of a book with the title "What's So Amazing About Grace?" written in white. The author's name is also visible on the spine.'
+book-inventory     | DEBUG: Extracted title via pattern '(?:the\s+)?title\s+(?:of\s+the\s+book\s+)?(?:is\s+)?"([^"]+)"': 'What's So Amazing About Grace?'
+book-inventory     | DEBUG: Final result - Title: 'What's So Amazing About Grace?', Author: ''
+book-inventory     | Parsed book: {'title': "What's So Amazing About Grace?", 'author': ''}
+book-inventory     | INFO:     127.0.0.1:35380 - "GET / HTTP/1.1" 200 OK
+book-inventory     | Scanner response line 3: {"success":true,"error":null,"data":"Book 2: The spine of the book is blue and white. It features th...
+book-inventory     | DEBUG: Parsing content: 'The spine of the book is blue and white. It features the title "Kisses from Kate" written in white letters, and the author's name "Katie Davis" written in smaller white letters below the title.'
+book-inventory     | DEBUG: Extracted title via pattern '(?:features|shows)\s+(?:the\s+)?title\s+"([^"]+)"': 'Kisses from Kate'
+book-inventory     | DEBUG: Extracted author via pattern '(?:author\'?s?\s+name)\s+(?:is\s+)?"([^"]+)"': 'Katie Davis'
+book-inventory     | DEBUG: Final result - Title: 'Kisses from Kate', Author: 'Katie Davis'
+book-inventory     | Parsed book: {'title': 'Kisses from Kate', 'author': 'Katie Davis'}
+book-inventory     | INFO:     127.0.0.1:39648 - "GET / HTTP/1.1" 200 OK
+book-inventory     | Scanner response line 4: {"success":true,"error":null,"data":"Book 3: The spine of the book is gray and features the title \"...
+book-inventory     | DEBUG: Parsing content: 'The spine of the book is gray and features the title "The Book of the Dun Cow" by Wangerin.'
+book-inventory     | DEBUG: Extracted title via pattern '(?:features|shows)\s+(?:the\s+)?title\s+"([^"]+)"': 'The Book of the Dun Cow'
+book-inventory     | DEBUG: Extracted author via pattern '(?:by|author)\s+([A-Z][a-z]+(?:\s+[A-Z][a-z\.]*)*)': 'Wangerin'
+book-inventory     | DEBUG: Final result - Title: 'The Book of the Dun Cow', Author: 'Wangerin'
+book-inventory     | Parsed book: {'title': 'The Book of the Dun Cow', 'author': 'Wangerin'}
+book-inventory     | INFO:     127.0.0.1:53264 - "GET / HTTP/1.1" 200 OK
+book-inventory     | Scanner response line 5: {"success":true,"error":null,"data":"Book 4: The book spine features the title \"Cross Roads\" and t...
+book-inventory     | DEBUG: Parsing content: 'The book spine features the title "Cross Roads" and the author "Wm. Paul Young".'
+book-inventory     | DEBUG: Extracted title via pattern '(?:features|shows)\s+(?:the\s+)?title\s+"([^"]+)"': 'Cross Roads'
+book-inventory     | DEBUG: Extracted author via pattern '(?:author|by)\s+(?:is\s+)?"([^"]+)"': 'Wm. Paul Young'
+book-inventory     | DEBUG: Final result - Title: 'Cross Roads', Author: 'Wm. Paul Young'
+book-inventory     | Parsed book: {'title': 'Cross Roads', 'author': 'Wm. Paul Young'}
+book-inventory     | Scanner response line 6: {"success":true,"error":null,"data":"Book 5: The spine of the book is gray and white. The title of t...
+book-inventory     | DEBUG: Parsing content: 'The spine of the book is gray and white. The title of the book is "The Book of the Dun Cow" and the author's name is "Wangerin".'
+book-inventory     | DEBUG: Extracted title via pattern '(?:the\s+)?title\s+(?:of\s+the\s+book\s+)?(?:is\s+)?"([^"]+)"': 'The Book of the Dun Cow'
+book-inventory     | DEBUG: Extracted author via pattern '(?:author\'?s?\s+name)\s+(?:is\s+)?"([^"]+)"': 'Wangerin'
+book-inventory     | DEBUG: Final result - Title: 'The Book of the Dun Cow', Author: 'Wangerin'
+book-inventory     | Parsed book: {'title': 'The Book of the Dun Cow', 'author': 'Wangerin'}
+book-inventory     | Scanner API completed. Total lines: 6, Books found: 5
+book-inventory     | DEBUG: Attempt 1: Trying query 'intitle:What's So Amazing About Grace?'
+book-inventory     | DEBUG: Query 'intitle:What's So Amazing About Grace?' returned 10 results
+book-inventory     | DEBUG: Result 1: 'What's So Amazing About Grace?' by ['Philip Yancey']
+book-inventory     |   Title: exact match (score: 1.00 -> 3.0 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 3.33 (title:1.00*3 + author:0.33*1)
+book-inventory     |   -> New best match!
+book-inventory     | DEBUG: Result 2: 'What's So Amazing About Grace? Revised and Updated' by ['Philip Yancey']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 3.03 (title:0.90*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 3: 'What's So Amazing About Grace? Bible Study Participant's Guide, Updated Edition' by ['Philip Yancey']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 3.03 (title:0.90*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 4: 'What's So Amazing about Grace? Revised and Updated' by ['Philip Yancey']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 3.03 (title:0.90*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 5: 'Where Is God When it Hurts/What's So Amazing About Grace?' by ['Philip Yancey']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 3.03 (title:0.90*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 6: 'What's So Amazing about Grace? Study Guide Revised and Updated' by ['Philip Yancey']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 3.03 (title:0.90*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 7: 'What's So Amazing about Grace? - International Edition' by ['Philip Yancey']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 3.03 (title:0.90*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 8: 'What's So Amazing about Grace? Study Guide with DVD Revised and Updated' by ['Philip Yancey']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 3.03 (title:0.90*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 9: 'What's So Amazing about Grace? Curriculum' by ['Philip Yancey']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 3.03 (title:0.90*3 + author:0.33*1)
+book-inventory     | DEBUG: Result 10: 'What's So Amazing about Grace Participant's Guide with DVD' by ['Philip Yancey']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: No author provided (1 point)
+book-inventory     |   Total score: 3.03 (title:0.90*3 + author:0.33*1)
+book-inventory     | DEBUG: Best match score for this query: 3.3333333333333335
+book-inventory     | DEBUG: SUCCESS! Returning match for 'What's So Amazing About Grace?' by ['Philip Yancey'] (score: 3.3333333333333335)
+book-inventory     | DEBUG: Attempt 1: Trying query 'Kisses from Kate Katie Davis'
+book-inventory     | DEBUG: Query 'Kisses from Kate Katie Davis' returned 9 results
+book-inventory     | DEBUG: Result 1: 'Kisses from Katie' by ['Katie J. Davis', 'Beth Clark']
+book-inventory     |   Title: edit distance (0.97) (score: 0.68 -> 2.0 points)
+book-inventory     |   Author: last name match vs 'katie j. davis' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 2.94 (title:0.68*3 + author:0.90*1)
+book-inventory     |   -> New best match!
+book-inventory     | DEBUG: Result 2: 'Daring to Hope' by ['Katie Davis Majors']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: name similarity (1.00) vs 'katie davis majors' (score: 0.80 -> 2.4 points)
+book-inventory     |   Total score: 0.80 (title:0.00*3 + author:0.80*1)
+book-inventory     | DEBUG: Result 3: 'I Love Jesus, But I Want to Die' by ['Sarah J. Robinson']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'sarah j. robinson' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Result 4: 'How Do You Take a Bath?' by ['Kate McMullan']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: name similarity (0.89) vs 'kate mcmullan' (score: 0.71 -> 2.1 points)
+book-inventory     |   Total score: 0.71 (title:0.00*3 + author:0.71*1)
+book-inventory     | DEBUG: Result 5: 'Out of the Dust' by ['Avis Goodhart', 'Marti Pieper']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: name similarity (0.89) vs 'avis goodhart' (score: 0.71 -> 2.1 points)
+book-inventory     |   Total score: 0.71 (title:0.00*3 + author:0.71*1)
+book-inventory     | DEBUG: Result 6: 'The Lost Kitten' by ['Katherine Cox']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'katherine cox' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Result 7: 'William & Catherine' by ['Andrew Morton']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'andrew morton' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Result 8: 'Anna Hibiscus' by ['Atinuke']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'atinuke' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Result 9: '9 Days and 9 Nights' by ['Katie Cotugno']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: name similarity (1.00) vs 'katie cotugno' (score: 0.80 -> 2.4 points)
+book-inventory     |   Total score: 0.80 (title:0.00*3 + author:0.80*1)
+book-inventory     | DEBUG: Best match score for this query: 2.936363636363636
+book-inventory     | DEBUG: SUCCESS! Returning match for 'Kisses from Katie' by ['Katie J. Davis', 'Beth Clark'] (score: 2.936363636363636)
+book-inventory     | DEBUG: Attempt 1: Trying query 'The Book of the Dun Cow Wangerin'
+book-inventory     | DEBUG: Query 'The Book of the Dun Cow Wangerin' returned 9 results
+book-inventory     | DEBUG: Result 1: 'The Book of God' by ['Walter Wangerin Jr.']
+book-inventory     |   Title: edit distance (0.60) (score: 0.42 -> 1.3 points)
+book-inventory     |   Author: name similarity (1.00) vs 'walter wangerin jr.' (score: 0.80 -> 2.4 points)
+book-inventory     |   Total score: 2.06 (title:0.42*3 + author:0.80*1)
+book-inventory     |   -> New best match!
+book-inventory     | DEBUG: Result 2: 'The Book of the Dun Cow' by ['Walter Wangerin']
+book-inventory     |   Title: exact match (score: 1.00 -> 3.0 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 3.90 (title:1.00*3 + author:0.90*1)
+book-inventory     |   -> New best match!
+book-inventory     | DEBUG: Result 3: 'The Second Book of the Dun Cow' by ['Walter Wangerin']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 3.60 (title:0.90*3 + author:0.90*1)
+book-inventory     | DEBUG: Result 4: 'The Third Book of the Dun Cow' by ['Walter Wangerin']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 3.60 (title:0.90*3 + author:0.90*1)
+book-inventory     | DEBUG: Result 5: 'Jesus' by ['Walter Wangerin Jr.']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: name similarity (1.00) vs 'walter wangerin jr.' (score: 0.80 -> 2.4 points)
+book-inventory     |   Total score: 0.80 (title:0.00*3 + author:0.80*1)
+book-inventory     | DEBUG: Result 6: 'Whole Prayer' by ['Walter Wangerin, Jr.', 'Walter Wangerin']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 0.90 (title:0.00*3 + author:0.90*1)
+book-inventory     | DEBUG: Result 7: 'The Book of the Dun Cow' by ['Walter Wangerin']
+book-inventory     |   Title: exact match (score: 1.00 -> 3.0 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 3.90 (title:1.00*3 + author:0.90*1)
+book-inventory     | DEBUG: Result 8: 'Letters from the Land of Cancer' by ['Walter Wangerin Jr.']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: name similarity (1.00) vs 'walter wangerin jr.' (score: 0.80 -> 2.4 points)
+book-inventory     |   Total score: 0.80 (title:0.00*3 + author:0.80*1)
+book-inventory     | DEBUG: Result 9: 'As for Me and My House' by ['Walter Wangerin']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 0.90 (title:0.00*3 + author:0.90*1)
+book-inventory     | DEBUG: Best match score for this query: 3.9
+book-inventory     | DEBUG: SUCCESS! Returning match for 'The Book of the Dun Cow' by ['Walter Wangerin'] (score: 3.9)
+book-inventory     | DEBUG: Attempt 1: Trying query 'Cross Roads Wm. Paul Young'
+book-inventory     | DEBUG: Query 'Cross Roads Wm. Paul Young' returned 10 results
+book-inventory     | DEBUG: Result 1: 'Eve' by ['Wm. Paul Young']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: exact match vs 'wm. paul young' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 1.00 (title:0.00*3 + author:1.00*1)
+book-inventory     | DEBUG: Result 2: 'The Shack' by ['Wm. Paul Young']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: exact match vs 'wm. paul young' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 1.00 (title:0.00*3 + author:1.00*1)
+book-inventory     | DEBUG: Result 3: 'Cross Roads Reflections' by ['Wm Paul Young']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: exact match vs 'wm paul young' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 3.70 (title:0.90*3 + author:1.00*1)
+book-inventory     |   -> New best match!
+book-inventory     | DEBUG: Result 4: 'Lies We Believe About God' by ['Wm. Paul Young']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: exact match vs 'wm. paul young' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 1.00 (title:0.00*3 + author:1.00*1)
+book-inventory     | DEBUG: Result 5: 'The Shack' by ['Wm. Paul Young']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: exact match vs 'wm. paul young' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 1.00 (title:0.00*3 + author:1.00*1)
+book-inventory     | DEBUG: Result 6: 'The Shack Revisited' by ['C. Baxter Kruger']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'c. baxter kruger' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Result 7: 'The Shack Study Guide' by ['Wm. Paul Young', 'Brad Robison']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: exact match vs 'wm. paul young' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 1.00 (title:0.00*3 + author:1.00*1)
+book-inventory     | DEBUG: Result 8: 'Fill These Hearts' by ['Christopher West']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'christopher west' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Result 9: 'Under Tiberius' by ['Nick Tosches']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'nick tosches' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Result 10: 'The Little Way of Ruthie Leming' by ['Rod Dreher']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'rod dreher' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Best match score for this query: 3.7
+book-inventory     | DEBUG: SUCCESS! Returning match for 'Cross Roads Reflections' by ['Wm Paul Young'] (score: 3.7)
+book-inventory     | DEBUG: Attempt 1: Trying query 'The Book of the Dun Cow Wangerin'
+book-inventory     | DEBUG: Query 'The Book of the Dun Cow Wangerin' returned 9 results
+book-inventory     | DEBUG: Result 1: 'The Book of God' by ['Walter Wangerin Jr.']
+book-inventory     |   Title: edit distance (0.60) (score: 0.42 -> 1.3 points)
+book-inventory     |   Author: name similarity (1.00) vs 'walter wangerin jr.' (score: 0.80 -> 2.4 points)
+book-inventory     |   Total score: 2.06 (title:0.42*3 + author:0.80*1)
+book-inventory     |   -> New best match!
+book-inventory     | DEBUG: Result 2: 'The Book of the Dun Cow' by ['Walter Wangerin']
+book-inventory     |   Title: exact match (score: 1.00 -> 3.0 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 3.90 (title:1.00*3 + author:0.90*1)
+book-inventory     |   -> New best match!
+book-inventory     | DEBUG: Result 3: 'The Second Book of the Dun Cow' by ['Walter Wangerin']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 3.60 (title:0.90*3 + author:0.90*1)
+book-inventory     | DEBUG: Result 4: 'The Third Book of the Dun Cow' by ['Walter Wangerin']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 3.60 (title:0.90*3 + author:0.90*1)
+book-inventory     | DEBUG: Result 5: 'Jesus' by ['Walter Wangerin Jr.']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: name similarity (1.00) vs 'walter wangerin jr.' (score: 0.80 -> 2.4 points)
+book-inventory     |   Total score: 0.80 (title:0.00*3 + author:0.80*1)
+book-inventory     | DEBUG: Result 6: 'Whole Prayer' by ['Walter Wangerin, Jr.', 'Walter Wangerin']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 0.90 (title:0.00*3 + author:0.90*1)
+book-inventory     | DEBUG: Result 7: 'The Book of the Dun Cow' by ['Walter Wangerin']
+book-inventory     |   Title: exact match (score: 1.00 -> 3.0 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 3.90 (title:1.00*3 + author:0.90*1)
+book-inventory     | DEBUG: Result 8: 'Letters from the Land of Cancer' by ['Walter Wangerin Jr.']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: name similarity (1.00) vs 'walter wangerin jr.' (score: 0.80 -> 2.4 points)
+book-inventory     |   Total score: 0.80 (title:0.00*3 + author:0.80*1)
+book-inventory     | DEBUG: Result 9: 'As for Me and My House' by ['Walter Wangerin']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 0.90 (title:0.00*3 + author:0.90*1)
+book-inventory     | DEBUG: Best match score for this query: 3.9
+book-inventory     | DEBUG: SUCCESS! Returning match for 'The Book of the Dun Cow' by ['Walter Wangerin'] (score: 3.9)
+book-inventory     | INFO:     10.10.10.1:48446 - "POST /scan-bookshelf HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:54634 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:40904 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:39496 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:51684 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:50392 - "GET / HTTP/1.1" 200 OK
+book-inventory     | === SCAN AND ADD DEBUG ===
+book-inventory     | Received books_data: {'books': [{'title': "What's So Amazing About Grace?", 'author': 'Philip Yancey', 'original_title': "What's So Amazing About Grace?", 'original_author': '', 'confidence': 'high', 'metadata_found': True, 'suggested_author': 'Philip Yancey', 'isbn': '9780310296171', 'publisher': 'Zondervan', 'year': 2008, 'genre': 'Religion', 'cover_url': 'https://books.google.com/books/content?id=YoiM82U_X-AC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', 'description': 'OVER ONE MILLION COPIES SOLD! Discover grace as you\'ve never known it before: the most powerful force in the universe and our only hope for love and forgiveness. Grace is the church\'s great distinctive. It\'s the one thing the world cannot duplicate, and the one thing it craves above all else--for only grace can bring hope and transformation to a jaded world. In What\'s So Amazing About Grace? award-winning author Philip Yancey explores grace at street level. If grace is God\'s love for the undeserving, he asks, then what does it look like in action? And if Christians are its sole dispensers, then how are we doing at lavishing grace on a world that knows far more of cruelty and unforgiveness than it does of mercy? Yancey sets grace in the midst of life\'s stark images, tests its mettle against horrific "ungrace": Can grace survive in the midst of such atrocities as the Nazi holocaust? Can it triumph over the brutality of the Ku Klux Klan? Should any grace at all be shown to the likes of Jeffrey Dahmer, who killed and cannibalized seventeen young men? Grace does not excuse sin, says Yancey, but it treasures the sinner. True grace is shocking, scandalous. It shakes our conventions with its insistence on getting close to sinners and touching them with mercy and hope. It forgives the unfaithful spouse, the racist, the child abuser. It loves today\'s AIDS-ridden addict as much as the tax collector of Jesus\'s day. In his most personal and provocative book ever, Yancey offers compelling, true portraits of grace\'s life-changing power. He searches for its presence in his own life and in the church. He asks, How can Christians contend graciously with moral issues that threaten all they hold dear? And he challenges us to become living answers to a world that desperately wants to know, What\'s So Amazing About Grace?', 'page_count': 301, 'location': 'TV Room'}, {'title': 'Kisses from Kate', 'author': 'Katie Davis', 'original_title': 'Kisses from Kate', 'original_author': 'Katie Davis', 'confidence': 'high', 'metadata_found': True, 'suggested_title': 'Kisses from Katie', 'isbn': '9781451612097', 'publisher': 'Simon and Schuster', 'year': 2012, 'genre': 'Biography & Autobiography', 'cover_url': 'https://books.google.com/books/content?id=kwpXargMe4MC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', 'description': 'Davis left for a short mission trip to Uganda and her life was turned completely inside out. She found herself so moved by the children of Uganda, and she knew her calling was to return and care for them. She gave up a comfortable life--at a young age--to care for the less fortunate.', 'page_count': 306, 'location': 'TV Room'}, {'title': 'The Book of the Dun Cow', 'author': 'Wangerin', 'original_title': 'The Book of the Dun Cow', 'original_author': 'Wangerin', 'confidence': 'medium', 'metadata_found': True, 'isbn': '9781626811034', 'publisher': 'Diversion Books', 'year': 2013, 'genre': 'Fiction', 'cover_url': 'https://books.google.com/books/content?id=K0XaRiKX9NcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', 'description': 'The timeless National Book Award-winning story of the epic struggle between good and evil. “Far and away the most literate and intelligent story of the year … Mr. Wangerin’s allegorical fantasy about the age-old struggle between good and evil produces a resonance; it is a taut string plucked that reverberates in memory” —New York Times “Belongs on the shelf with Animal Farm, Watership Down and The Lord of the Rings. It is, like them, an absorbing, fanciful parade of the war between good and evil. A powerful and enjoyable work of the imagination.” —Los Angeles Times In a time when the sun revolved around the Earth, and the animals could speak, Chauntecleer the Rooster rules justly over his kingdom. But while peace reigns for Chauntecleer, evil is brewing across the river, as the monstrous Cockatrice pillages his own lands and people, preparing for the return of Wyrm. Imprisoned within the Earth to contain this ancient evil, Wyrm is determined to return, with the help of Cockatrice. Keeping Wyrm in his prison is a task too great for any individual animal, so it is up to Chantecleer to rally all of the animals, great and small, to work together to keep the Earth safe once again. “Good and evil were never seen more distinctly not pitted more ferociously than in this animal fable, reverberating with the righteousness of the Bible or a medieval morality play … The animals are not mere literary symbols but are invested with a humanness all their won.” —The Saturday Evening Post “Wangerin’s story functions as a frightening representation of modern evil … a parable for adults to ponder.” —The Christian Century “Wangerin has so fluidly woven all these legends together into one small gem.” —Washington Post Book World', 'page_count': 292, 'location': 'TV Room'}, {'title': 'Cross Roads', 'author': 'Wm. Paul Young', 'original_title': 'Cross Roads', 'original_author': 'Wm. Paul Young', 'confidence': 'high', 'metadata_found': True, 'suggested_title': 'Cross Roads Reflections', 'isbn': '9781444790917', 'publisher': '', 'year': 2013, 'genre': None, 'cover_url': 'https://books.google.com/books/content?id=Ac_vngEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api', 'description': 'The powerful story found in Cross Roads inspired and encouraged readers around the world. Now, CROSS ROADS REFLECTIONS provides an opportunity for you to revisit Tony and his redemption journey in a fresh and unique way. This 365-day devotional contains meaningful quotes from Cross Roads along with insightful and thought-provoking prayers written by the author, Wm. Paul Young, who also wrote the phenomenal bestseller, The Shack. It is designed to inspire, encourage, and uplift you every day of the year.', 'page_count': 384, 'location': 'TV Room'}, {'title': 'The Book of the Dun Cow', 'author': 'Wangerin', 'original_title': 'The Book of the Dun Cow', 'original_author': 'Wangerin', 'confidence': 'medium', 'metadata_found': True, 'isbn': '9781626811034', 'publisher': 'Diversion Books', 'year': 2013, 'genre': 'Fiction', 'cover_url': 'https://books.google.com/books/content?id=K0XaRiKX9NcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', 'description': 'The timeless National Book Award-winning story of the epic struggle between good and evil. “Far and away the most literate and intelligent story of the year … Mr. Wangerin’s allegorical fantasy about the age-old struggle between good and evil produces a resonance; it is a taut string plucked that reverberates in memory” —New York Times “Belongs on the shelf with Animal Farm, Watership Down and The Lord of the Rings. It is, like them, an absorbing, fanciful parade of the war between good and evil. A powerful and enjoyable work of the imagination.” —Los Angeles Times In a time when the sun revolved around the Earth, and the animals could speak, Chauntecleer the Rooster rules justly over his kingdom. But while peace reigns for Chauntecleer, evil is brewing across the river, as the monstrous Cockatrice pillages his own lands and people, preparing for the return of Wyrm. Imprisoned within the Earth to contain this ancient evil, Wyrm is determined to return, with the help of Cockatrice. Keeping Wyrm in his prison is a task too great for any individual animal, so it is up to Chantecleer to rally all of the animals, great and small, to work together to keep the Earth safe once again. “Good and evil were never seen more distinctly not pitted more ferociously than in this animal fable, reverberating with the righteousness of the Bible or a medieval morality play … The animals are not mere literary symbols but are invested with a humanness all their won.” —The Saturday Evening Post “Wangerin’s story functions as a frightening representation of modern evil … a parable for adults to ponder.” —The Christian Century “Wangerin has so fluidly woven all these legends together into one small gem.” —Washington Post Book World', 'page_count': 292, 'location': 'TV Room'}]}
+book-inventory     | Books to add: [{'title': "What's So Amazing About Grace?", 'author': 'Philip Yancey', 'original_title': "What's So Amazing About Grace?", 'original_author': '', 'confidence': 'high', 'metadata_found': True, 'suggested_author': 'Philip Yancey', 'isbn': '9780310296171', 'publisher': 'Zondervan', 'year': 2008, 'genre': 'Religion', 'cover_url': 'https://books.google.com/books/content?id=YoiM82U_X-AC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', 'description': 'OVER ONE MILLION COPIES SOLD! Discover grace as you\'ve never known it before: the most powerful force in the universe and our only hope for love and forgiveness. Grace is the church\'s great distinctive. It\'s the one thing the world cannot duplicate, and the one thing it craves above all else--for only grace can bring hope and transformation to a jaded world. In What\'s So Amazing About Grace? award-winning author Philip Yancey explores grace at street level. If grace is God\'s love for the undeserving, he asks, then what does it look like in action? And if Christians are its sole dispensers, then how are we doing at lavishing grace on a world that knows far more of cruelty and unforgiveness than it does of mercy? Yancey sets grace in the midst of life\'s stark images, tests its mettle against horrific "ungrace": Can grace survive in the midst of such atrocities as the Nazi holocaust? Can it triumph over the brutality of the Ku Klux Klan? Should any grace at all be shown to the likes of Jeffrey Dahmer, who killed and cannibalized seventeen young men? Grace does not excuse sin, says Yancey, but it treasures the sinner. True grace is shocking, scandalous. It shakes our conventions with its insistence on getting close to sinners and touching them with mercy and hope. It forgives the unfaithful spouse, the racist, the child abuser. It loves today\'s AIDS-ridden addict as much as the tax collector of Jesus\'s day. In his most personal and provocative book ever, Yancey offers compelling, true portraits of grace\'s life-changing power. He searches for its presence in his own life and in the church. He asks, How can Christians contend graciously with moral issues that threaten all they hold dear? And he challenges us to become living answers to a world that desperately wants to know, What\'s So Amazing About Grace?', 'page_count': 301, 'location': 'TV Room'}, {'title': 'Kisses from Kate', 'author': 'Katie Davis', 'original_title': 'Kisses from Kate', 'original_author': 'Katie Davis', 'confidence': 'high', 'metadata_found': True, 'suggested_title': 'Kisses from Katie', 'isbn': '9781451612097', 'publisher': 'Simon and Schuster', 'year': 2012, 'genre': 'Biography & Autobiography', 'cover_url': 'https://books.google.com/books/content?id=kwpXargMe4MC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', 'description': 'Davis left for a short mission trip to Uganda and her life was turned completely inside out. She found herself so moved by the children of Uganda, and she knew her calling was to return and care for them. She gave up a comfortable life--at a young age--to care for the less fortunate.', 'page_count': 306, 'location': 'TV Room'}, {'title': 'The Book of the Dun Cow', 'author': 'Wangerin', 'original_title': 'The Book of the Dun Cow', 'original_author': 'Wangerin', 'confidence': 'medium', 'metadata_found': True, 'isbn': '9781626811034', 'publisher': 'Diversion Books', 'year': 2013, 'genre': 'Fiction', 'cover_url': 'https://books.google.com/books/content?id=K0XaRiKX9NcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', 'description': 'The timeless National Book Award-winning story of the epic struggle between good and evil. “Far and away the most literate and intelligent story of the year … Mr. Wangerin’s allegorical fantasy about the age-old struggle between good and evil produces a resonance; it is a taut string plucked that reverberates in memory” —New York Times “Belongs on the shelf with Animal Farm, Watership Down and The Lord of the Rings. It is, like them, an absorbing, fanciful parade of the war between good and evil. A powerful and enjoyable work of the imagination.” —Los Angeles Times In a time when the sun revolved around the Earth, and the animals could speak, Chauntecleer the Rooster rules justly over his kingdom. But while peace reigns for Chauntecleer, evil is brewing across the river, as the monstrous Cockatrice pillages his own lands and people, preparing for the return of Wyrm. Imprisoned within the Earth to contain this ancient evil, Wyrm is determined to return, with the help of Cockatrice. Keeping Wyrm in his prison is a task too great for any individual animal, so it is up to Chantecleer to rally all of the animals, great and small, to work together to keep the Earth safe once again. “Good and evil were never seen more distinctly not pitted more ferociously than in this animal fable, reverberating with the righteousness of the Bible or a medieval morality play … The animals are not mere literary symbols but are invested with a humanness all their won.” —The Saturday Evening Post “Wangerin’s story functions as a frightening representation of modern evil … a parable for adults to ponder.” —The Christian Century “Wangerin has so fluidly woven all these legends together into one small gem.” —Washington Post Book World', 'page_count': 292, 'location': 'TV Room'}, {'title': 'Cross Roads', 'author': 'Wm. Paul Young', 'original_title': 'Cross Roads', 'original_author': 'Wm. Paul Young', 'confidence': 'high', 'metadata_found': True, 'suggested_title': 'Cross Roads Reflections', 'isbn': '9781444790917', 'publisher': '', 'year': 2013, 'genre': None, 'cover_url': 'https://books.google.com/books/content?id=Ac_vngEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api', 'description': 'The powerful story found in Cross Roads inspired and encouraged readers around the world. Now, CROSS ROADS REFLECTIONS provides an opportunity for you to revisit Tony and his redemption journey in a fresh and unique way. This 365-day devotional contains meaningful quotes from Cross Roads along with insightful and thought-provoking prayers written by the author, Wm. Paul Young, who also wrote the phenomenal bestseller, The Shack. It is designed to inspire, encourage, and uplift you every day of the year.', 'page_count': 384, 'location': 'TV Room'}, {'title': 'The Book of the Dun Cow', 'author': 'Wangerin', 'original_title': 'The Book of the Dun Cow', 'original_author': 'Wangerin', 'confidence': 'medium', 'metadata_found': True, 'isbn': '9781626811034', 'publisher': 'Diversion Books', 'year': 2013, 'genre': 'Fiction', 'cover_url': 'https://books.google.com/books/content?id=K0XaRiKX9NcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', 'description': 'The timeless National Book Award-winning story of the epic struggle between good and evil. “Far and away the most literate and intelligent story of the year … Mr. Wangerin’s allegorical fantasy about the age-old struggle between good and evil produces a resonance; it is a taut string plucked that reverberates in memory” —New York Times “Belongs on the shelf with Animal Farm, Watership Down and The Lord of the Rings. It is, like them, an absorbing, fanciful parade of the war between good and evil. A powerful and enjoyable work of the imagination.” —Los Angeles Times In a time when the sun revolved around the Earth, and the animals could speak, Chauntecleer the Rooster rules justly over his kingdom. But while peace reigns for Chauntecleer, evil is brewing across the river, as the monstrous Cockatrice pillages his own lands and people, preparing for the return of Wyrm. Imprisoned within the Earth to contain this ancient evil, Wyrm is determined to return, with the help of Cockatrice. Keeping Wyrm in his prison is a task too great for any individual animal, so it is up to Chantecleer to rally all of the animals, great and small, to work together to keep the Earth safe once again. “Good and evil were never seen more distinctly not pitted more ferociously than in this animal fable, reverberating with the righteousness of the Bible or a medieval morality play … The animals are not mere literary symbols but are invested with a humanness all their won.” —The Saturday Evening Post “Wangerin’s story functions as a frightening representation of modern evil … a parable for adults to ponder.” —The Christian Century “Wangerin has so fluidly woven all these legends together into one small gem.” —Washington Post Book World', 'page_count': 292, 'location': 'TV Room'}]
+bookshelf-scanner  | load:                                             
+book-inventory     | Number of books to add: 5
+book-inventory     | 
+book-inventory     | --- Processing book 1/5 ---
+book-inventory     | Book data: {'title': "What's So Amazing About Grace?", 'author': 'Philip Yancey', 'original_title': "What's So Amazing About Grace?", 'original_author': '', 'confidence': 'high', 'metadata_found': True, 'suggested_author': 'Philip Yancey', 'isbn': '9780310296171', 'publisher': 'Zondervan', 'year': 2008, 'genre': 'Religion', 'cover_url': 'https://books.google.com/books/content?id=YoiM82U_X-AC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', 'description': 'OVER ONE MILLION COPIES SOLD! Discover grace as you\'ve never known it before: the most powerful force in the universe and our only hope for love and forgiveness. Grace is the church\'s great distinctive. It\'s the one thing the world cannot duplicate, and the one thing it craves above all else--for only grace can bring hope and transformation to a jaded world. In What\'s So Amazing About Grace? award-winning author Philip Yancey explores grace at street level. If grace is God\'s love for the undeserving, he asks, then what does it look like in action? And if Christians are its sole dispensers, then how are we doing at lavishing grace on a world that knows far more of cruelty and unforgiveness than it does of mercy? Yancey sets grace in the midst of life\'s stark images, tests its mettle against horrific "ungrace": Can grace survive in the midst of such atrocities as the Nazi holocaust? Can it triumph over the brutality of the Ku Klux Klan? Should any grace at all be shown to the likes of Jeffrey Dahmer, who killed and cannibalized seventeen young men? Grace does not excuse sin, says Yancey, but it treasures the sinner. True grace is shocking, scandalous. It shakes our conventions with its insistence on getting close to sinners and touching them with mercy and hope. It forgives the unfaithful spouse, the racist, the child abuser. It loves today\'s AIDS-ridden addict as much as the tax collector of Jesus\'s day. In his most personal and provocative book ever, Yancey offers compelling, true portraits of grace\'s life-changing power. He searches for its presence in his own life and in the church. He asks, How can Christians contend graciously with moral issues that threaten all they hold dear? And he challenges us to become living answers to a world that desperately wants to know, What\'s So Amazing About Grace?', 'page_count': 301, 'location': 'TV Room'}
+book-inventory     | Extracted title: 'What's So Amazing About Grace?'
+book-inventory     | Extracted author: 'Philip Yancey'
+book-inventory     | Starting metadata lookup for: 'What's So Amazing About Grace?' by 'Philip Yancey'
+book-inventory     | DEBUG: Attempt 1: Trying query 'What's So Amazing About Grace? Philip Yancey'
+book-inventory     | DEBUG: Query 'What's So Amazing About Grace? Philip Yancey' returned 10 results
+book-inventory     | DEBUG: Result 1: 'What's So Amazing about Grace?' by ['Philip Yancey']
+book-inventory     |   Title: exact match (score: 1.00 -> 3.0 points)
+book-inventory     |   Author: exact match vs 'philip yancey' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 4.00 (title:1.00*3 + author:1.00*1)
+book-inventory     |   -> New best match!
+book-inventory     | DEBUG: Result 2: 'The Scandal of Forgiveness' by ['Philip Yancey']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: exact match vs 'philip yancey' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 1.00 (title:0.00*3 + author:1.00*1)
+book-inventory     | DEBUG: Result 3: 'I Was Just Wondering' by ['Philip Yancey']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: exact match vs 'philip yancey' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 1.00 (title:0.00*3 + author:1.00*1)
+book-inventory     | DEBUG: Result 4: 'Grace' by ['Philip Yancey']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: exact match vs 'philip yancey' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 3.70 (title:0.90*3 + author:1.00*1)
+book-inventory     | DEBUG: Result 5: 'Where the Light Fell' by ['Philip Yancey']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: exact match vs 'philip yancey' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 1.00 (title:0.00*3 + author:1.00*1)
+book-inventory     | DEBUG: Result 6: 'Grace Notes' by ['Philip Yancey']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: exact match vs 'philip yancey' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 1.00 (title:0.00*3 + author:1.00*1)
+book-inventory     | DEBUG: Result 7: 'Disappointment with God' by ['Philip Yancey']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: exact match vs 'philip yancey' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 1.00 (title:0.00*3 + author:1.00*1)
+book-inventory     | DEBUG: Result 8: 'The Jesus I Never Knew' by ['Philip Yancey']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: exact match vs 'philip yancey' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 1.00 (title:0.00*3 + author:1.00*1)
+book-inventory     | DEBUG: Result 9: 'Fearfully and Wonderfully' by ['Paul Brand', 'Philip Yancey']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: exact match vs 'philip yancey' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 1.00 (title:0.00*3 + author:1.00*1)
+book-inventory     | DEBUG: Result 10: 'Finding God In Unexpected Places' by ['Philip Yancey']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: exact match vs 'philip yancey' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 1.00 (title:0.00*3 + author:1.00*1)
+book-inventory     | DEBUG: Best match score for this query: 4.0
+book-inventory     | DEBUG: SUCCESS! Returning match for 'What's So Amazing about Grace?' by ['Philip Yancey'] (score: 4.0)
+book-inventory     | Metadata lookup result: {'title': "What's So Amazing about Grace?", 'author': 'Philip Yancey', 'publisher': 'Zondervan', 'year': 2002, 'isbn': '9780310245650', 'cover_url': 'https://books.google.com/books/content?id=MjhgHcUmMuwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', 'google_books_link': 'https://books.google.com/books/about/What_s_So_Amazing_about_Grace.html?hl=&id=MjhgHcUmMuwC', 'description': 'Ask librarian for help in locating.', 'page_count': 310, 'genre': 'Christian life', 'source': 'google_books', 'match_score': 4.0}
+book-inventory     | Prepared book_to_insert: {'title': "What's So Amazing About Grace?", 'author': 'Philip Yancey', 'isbn': '9780310245650', 'publisher': 'Zondervan', 'year': 2002, 'genre': 'Christian life', 'location': 'TV Room', 'condition': None, 'notes': None, 'cover_url': 'https://books.google.com/books/content?id=MjhgHcUmMuwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', 'google_books_link': 'https://books.google.com/books/about/What_s_So_Amazing_about_Grace.html?hl=&id=MjhgHcUmMuwC', 'description': 'Ask librarian for help in locating.', 'page_count': 310}
+book-inventory     | Attempting database insertion...
+book-inventory     | Database insertion successful! Book ID: 15
+book-inventory     | Successfully added book: What's So Amazing About Grace? by Philip Yancey
+book-inventory     | 
+book-inventory     | --- Processing book 2/5 ---
+book-inventory     | Book data: {'title': 'Kisses from Kate', 'author': 'Katie Davis', 'original_title': 'Kisses from Kate', 'original_author': 'Katie Davis', 'confidence': 'high', 'metadata_found': True, 'suggested_title': 'Kisses from Katie', 'isbn': '9781451612097', 'publisher': 'Simon and Schuster', 'year': 2012, 'genre': 'Biography & Autobiography', 'cover_url': 'https://books.google.com/books/content?id=kwpXargMe4MC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', 'description': 'Davis left for a short mission trip to Uganda and her life was turned completely inside out. She found herself so moved by the children of Uganda, and she knew her calling was to return and care for them. She gave up a comfortable life--at a young age--to care for the less fortunate.', 'page_count': 306, 'location': 'TV Room'}
+book-inventory     | Extracted title: 'Kisses from Kate'
+book-inventory     | Extracted author: 'Katie Davis'
+book-inventory     | Starting metadata lookup for: 'Kisses from Kate' by 'Katie Davis'
+book-inventory     | DEBUG: Attempt 1: Trying query 'Kisses from Kate Katie Davis'
+book-inventory     | DEBUG: Query 'Kisses from Kate Katie Davis' returned 9 results
+book-inventory     | DEBUG: Result 1: 'Kisses from Katie' by ['Katie J. Davis', 'Beth Clark']
+book-inventory     |   Title: edit distance (0.97) (score: 0.68 -> 2.0 points)
+book-inventory     |   Author: last name match vs 'katie j. davis' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 2.94 (title:0.68*3 + author:0.90*1)
+book-inventory     |   -> New best match!
+book-inventory     | DEBUG: Result 2: 'Daring to Hope' by ['Katie Davis Majors']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: name similarity (1.00) vs 'katie davis majors' (score: 0.80 -> 2.4 points)
+book-inventory     |   Total score: 0.80 (title:0.00*3 + author:0.80*1)
+book-inventory     | DEBUG: Result 3: 'I Love Jesus, But I Want to Die' by ['Sarah J. Robinson']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'sarah j. robinson' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Result 4: 'How Do You Take a Bath?' by ['Kate McMullan']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: name similarity (0.89) vs 'kate mcmullan' (score: 0.71 -> 2.1 points)
+book-inventory     |   Total score: 0.71 (title:0.00*3 + author:0.71*1)
+book-inventory     | DEBUG: Result 5: 'Out of the Dust' by ['Avis Goodhart', 'Marti Pieper']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: name similarity (0.89) vs 'avis goodhart' (score: 0.71 -> 2.1 points)
+book-inventory     |   Total score: 0.71 (title:0.00*3 + author:0.71*1)
+book-inventory     | DEBUG: Result 6: 'The Lost Kitten' by ['Katherine Cox']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'katherine cox' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Result 7: 'William & Catherine' by ['Andrew Morton']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'andrew morton' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Result 8: 'Anna Hibiscus' by ['Atinuke']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'atinuke' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Result 9: '9 Days and 9 Nights' by ['Katie Cotugno']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: name similarity (1.00) vs 'katie cotugno' (score: 0.80 -> 2.4 points)
+book-inventory     |   Total score: 0.80 (title:0.00*3 + author:0.80*1)
+book-inventory     | DEBUG: Best match score for this query: 2.936363636363636
+book-inventory     | DEBUG: SUCCESS! Returning match for 'Kisses from Katie' by ['Katie J. Davis', 'Beth Clark'] (score: 2.936363636363636)
+book-inventory     | Metadata lookup result: {'title': 'Kisses from Katie', 'author': 'Katie J. Davis, Beth Clark', 'publisher': 'Simon and Schuster', 'year': 2012, 'isbn': '9781451612097', 'cover_url': 'https://books.google.com/books/content?id=kwpXargMe4MC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', 'google_books_link': 'https://books.google.com/books/about/Kisses_from_Katie.html?hl=&id=kwpXargMe4MC', 'description': 'Davis left for a short mission trip to Uganda and her life was turned completely inside out. She found herself so moved by the children of Uganda, and she knew her calling was to return and care for them. She gave up a comfortable life--at a young age--to care for the less fortunate.', 'page_count': 306, 'genre': 'Biography & Autobiography', 'source': 'google_books', 'match_score': 2.936363636363636}
+book-inventory     | Prepared book_to_insert: {'title': 'Kisses from Kate', 'author': 'Katie Davis', 'isbn': '9781451612097', 'publisher': 'Simon and Schuster', 'year': 2012, 'genre': 'Biography & Autobiography', 'location': 'TV Room', 'condition': None, 'notes': None, 'cover_url': 'https://books.google.com/books/content?id=kwpXargMe4MC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', 'google_books_link': 'https://books.google.com/books/about/Kisses_from_Katie.html?hl=&id=kwpXargMe4MC', 'description': 'Davis left for a short mission trip to Uganda and her life was turned completely inside out. She found herself so moved by the children of Uganda, and she knew her calling was to return and care for them. She gave up a comfortable life--at a young age--to care for the less fortunate.', 'page_count': 306}
+book-inventory     | Attempting database insertion...
+book-inventory     | Database insertion successful! Book ID: 16
+book-inventory     | Successfully added book: Kisses from Kate by Katie Davis
+book-inventory     | 
+book-inventory     | --- Processing book 3/5 ---
+book-inventory     | Book data: {'title': 'The Book of the Dun Cow', 'author': 'Wangerin', 'original_title': 'The Book of the Dun Cow', 'original_author': 'Wangerin', 'confidence': 'medium', 'metadata_found': True, 'isbn': '9781626811034', 'publisher': 'Diversion Books', 'year': 2013, 'genre': 'Fiction', 'cover_url': 'https://books.google.com/books/content?id=K0XaRiKX9NcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', 'description': 'The timeless National Book Award-winning story of the epic struggle between good and evil. “Far and away the most literate and intelligent story of the year … Mr. Wangerin’s allegorical fantasy about the age-old struggle between good and evil produces a resonance; it is a taut string plucked that reverberates in memory” —New York Times “Belongs on the shelf with Animal Farm, Watership Down and The Lord of the Rings. It is, like them, an absorbing, fanciful parade of the war between good and evil. A powerful and enjoyable work of the imagination.” —Los Angeles Times In a time when the sun revolved around the Earth, and the animals could speak, Chauntecleer the Rooster rules justly over his kingdom. But while peace reigns for Chauntecleer, evil is brewing across the river, as the monstrous Cockatrice pillages his own lands and people, preparing for the return of Wyrm. Imprisoned within the Earth to contain this ancient evil, Wyrm is determined to return, with the help of Cockatrice. Keeping Wyrm in his prison is a task too great for any individual animal, so it is up to Chantecleer to rally all of the animals, great and small, to work together to keep the Earth safe once again. “Good and evil were never seen more distinctly not pitted more ferociously than in this animal fable, reverberating with the righteousness of the Bible or a medieval morality play … The animals are not mere literary symbols but are invested with a humanness all their won.” —The Saturday Evening Post “Wangerin’s story functions as a frightening representation of modern evil … a parable for adults to ponder.” —The Christian Century “Wangerin has so fluidly woven all these legends together into one small gem.” —Washington Post Book World', 'page_count': 292, 'location': 'TV Room'}
+book-inventory     | Extracted title: 'The Book of the Dun Cow'
+book-inventory     | Extracted author: 'Wangerin'
+book-inventory     | Starting metadata lookup for: 'The Book of the Dun Cow' by 'Wangerin'
+book-inventory     | DEBUG: Attempt 1: Trying query 'The Book of the Dun Cow Wangerin'
+book-inventory     | DEBUG: Query 'The Book of the Dun Cow Wangerin' returned 9 results
+book-inventory     | DEBUG: Result 1: 'The Book of God' by ['Walter Wangerin Jr.']
+book-inventory     |   Title: edit distance (0.60) (score: 0.42 -> 1.3 points)
+book-inventory     |   Author: name similarity (1.00) vs 'walter wangerin jr.' (score: 0.80 -> 2.4 points)
+book-inventory     |   Total score: 2.06 (title:0.42*3 + author:0.80*1)
+book-inventory     |   -> New best match!
+book-inventory     | DEBUG: Result 2: 'The Book of the Dun Cow' by ['Walter Wangerin']
+book-inventory     |   Title: exact match (score: 1.00 -> 3.0 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 3.90 (title:1.00*3 + author:0.90*1)
+book-inventory     |   -> New best match!
+book-inventory     | DEBUG: Result 3: 'The Second Book of the Dun Cow' by ['Walter Wangerin']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 3.60 (title:0.90*3 + author:0.90*1)
+book-inventory     | DEBUG: Result 4: 'The Third Book of the Dun Cow' by ['Walter Wangerin']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 3.60 (title:0.90*3 + author:0.90*1)
+book-inventory     | DEBUG: Result 5: 'Jesus' by ['Walter Wangerin Jr.']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: name similarity (1.00) vs 'walter wangerin jr.' (score: 0.80 -> 2.4 points)
+book-inventory     |   Total score: 0.80 (title:0.00*3 + author:0.80*1)
+book-inventory     | DEBUG: Result 6: 'Whole Prayer' by ['Walter Wangerin, Jr.', 'Walter Wangerin']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 0.90 (title:0.00*3 + author:0.90*1)
+book-inventory     | DEBUG: Result 7: 'The Book of the Dun Cow' by ['Walter Wangerin']
+book-inventory     |   Title: exact match (score: 1.00 -> 3.0 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 3.90 (title:1.00*3 + author:0.90*1)
+book-inventory     | DEBUG: Result 8: 'Letters from the Land of Cancer' by ['Walter Wangerin Jr.']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: name similarity (1.00) vs 'walter wangerin jr.' (score: 0.80 -> 2.4 points)
+book-inventory     |   Total score: 0.80 (title:0.00*3 + author:0.80*1)
+book-inventory     | DEBUG: Result 9: 'As for Me and My House' by ['Walter Wangerin']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 0.90 (title:0.00*3 + author:0.90*1)
+book-inventory     | DEBUG: Best match score for this query: 3.9
+book-inventory     | DEBUG: SUCCESS! Returning match for 'The Book of the Dun Cow' by ['Walter Wangerin'] (score: 3.9)
+book-inventory     | Metadata lookup result: {'title': 'The Book of the Dun Cow', 'author': 'Walter Wangerin', 'publisher': 'Diversion Books', 'year': 2013, 'isbn': '9781626811034', 'cover_url': 'https://books.google.com/books/content?id=K0XaRiKX9NcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', 'google_books_link': 'https://play.google.com/store/books/details?id=K0XaRiKX9NcC', 'description': 'The timeless National Book Award-winning story of the epic struggle between good and evil. “Far and away the most literate and intelligent story of the year … Mr. Wangerin’s allegorical fantasy about the age-old struggle between good and evil produces a resonance; it is a taut string plucked that reverberates in memory” —New York Times “Belongs on the shelf with Animal Farm, Watership Down and The Lord of the Rings. It is, like them, an absorbing, fanciful parade of the war between good and evil. A powerful and enjoyable work of the imagination.” —Los Angeles Times In a time when the sun revolved around the Earth, and the animals could speak, Chauntecleer the Rooster rules justly over his kingdom. But while peace reigns for Chauntecleer, evil is brewing across the river, as the monstrous Cockatrice pillages his own lands and people, preparing for the return of Wyrm. Imprisoned within the Earth to contain this ancient evil, Wyrm is determined to return, with the help of Cockatrice. Keeping Wyrm in his prison is a task too great for any individual animal, so it is up to Chantecleer to rally all of the animals, great and small, to work together to keep the Earth safe once again. “Good and evil were never seen more distinctly not pitted more ferociously than in this animal fable, reverberating with the righteousness of the Bible or a medieval morality play … The animals are not mere literary symbols but are invested with a humanness all their won.” —The Saturday Evening Post “Wangerin’s story functions as a frightening representation of modern evil … a parable for adults to ponder.” —The Christian Century “Wangerin has so fluidly woven all these legends together into one small gem.” —Washington Post Book World', 'page_count': 292, 'genre': 'Fiction', 'source': 'google_books', 'match_score': 3.9}
+book-inventory     | Prepared book_to_insert: {'title': 'The Book of the Dun Cow', 'author': 'Wangerin', 'isbn': '9781626811034', 'publisher': 'Diversion Books', 'year': 2013, 'genre': 'Fiction', 'location': 'TV Room', 'condition': None, 'notes': None, 'cover_url': 'https://books.google.com/books/content?id=K0XaRiKX9NcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', 'google_books_link': 'https://play.google.com/store/books/details?id=K0XaRiKX9NcC', 'description': 'The timeless National Book Award-winning story of the epic struggle between good and evil. “Far and away the most literate and intelligent story of the year … Mr. Wangerin’s allegorical fantasy about the age-old struggle between good and evil produces a resonance; it is a taut string plucked that reverberates in memory” —New York Times “Belongs on the shelf with Animal Farm, Watership Down and The Lord of the Rings. It is, like them, an absorbing, fanciful parade of the war between good and evil. A powerful and enjoyable work of the imagination.” —Los Angeles Times In a time when the sun revolved around the Earth, and the animals could speak, Chauntecleer the Rooster rules justly over his kingdom. But while peace reigns for Chauntecleer, evil is brewing across the river, as the monstrous Cockatrice pillages his own lands and people, preparing for the return of Wyrm. Imprisoned within the Earth to contain this ancient evil, Wyrm is determined to return, with the help of Cockatrice. Keeping Wyrm in his prison is a task too great for any individual animal, so it is up to Chantecleer to rally all of the animals, great and small, to work together to keep the Earth safe once again. “Good and evil were never seen more distinctly not pitted more ferociously than in this animal fable, reverberating with the righteousness of the Bible or a medieval morality play … The animals are not mere literary symbols but are invested with a humanness all their won.” —The Saturday Evening Post “Wangerin’s story functions as a frightening representation of modern evil … a parable for adults to ponder.” —The Christian Century “Wangerin has so fluidly woven all these legends together into one small gem.” —Washington Post Book World', 'page_count': 292}
+book-inventory     | Attempting database insertion...
+book-inventory     | Database insertion successful! Book ID: 17
+book-inventory     | Successfully added book: The Book of the Dun Cow by Wangerin
+book-inventory     | 
+book-inventory     | --- Processing book 4/5 ---
+book-inventory     | Book data: {'title': 'Cross Roads', 'author': 'Wm. Paul Young', 'original_title': 'Cross Roads', 'original_author': 'Wm. Paul Young', 'confidence': 'high', 'metadata_found': True, 'suggested_title': 'Cross Roads Reflections', 'isbn': '9781444790917', 'publisher': '', 'year': 2013, 'genre': None, 'cover_url': 'https://books.google.com/books/content?id=Ac_vngEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api', 'description': 'The powerful story found in Cross Roads inspired and encouraged readers around the world. Now, CROSS ROADS REFLECTIONS provides an opportunity for you to revisit Tony and his redemption journey in a fresh and unique way. This 365-day devotional contains meaningful quotes from Cross Roads along with insightful and thought-provoking prayers written by the author, Wm. Paul Young, who also wrote the phenomenal bestseller, The Shack. It is designed to inspire, encourage, and uplift you every day of the year.', 'page_count': 384, 'location': 'TV Room'}
+book-inventory     | Extracted title: 'Cross Roads'
+book-inventory     | Extracted author: 'Wm. Paul Young'
+book-inventory     | Starting metadata lookup for: 'Cross Roads' by 'Wm. Paul Young'
+book-inventory     | DEBUG: Attempt 1: Trying query 'Cross Roads Wm. Paul Young'
+book-inventory     | DEBUG: Query 'Cross Roads Wm. Paul Young' returned 10 results
+book-inventory     | DEBUG: Result 1: 'Eve' by ['Wm. Paul Young']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: exact match vs 'wm. paul young' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 1.00 (title:0.00*3 + author:1.00*1)
+book-inventory     | DEBUG: Result 2: 'The Shack' by ['Wm. Paul Young']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: exact match vs 'wm. paul young' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 1.00 (title:0.00*3 + author:1.00*1)
+book-inventory     | DEBUG: Result 3: 'Cross Roads Reflections' by ['Wm Paul Young']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: exact match vs 'wm paul young' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 3.70 (title:0.90*3 + author:1.00*1)
+book-inventory     |   -> New best match!
+book-inventory     | DEBUG: Result 4: 'Lies We Believe About God' by ['Wm. Paul Young']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: exact match vs 'wm. paul young' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 1.00 (title:0.00*3 + author:1.00*1)
+book-inventory     | DEBUG: Result 5: 'The Shack' by ['Wm. Paul Young']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: exact match vs 'wm. paul young' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 1.00 (title:0.00*3 + author:1.00*1)
+book-inventory     | DEBUG: Result 6: 'The Shack Revisited' by ['C. Baxter Kruger']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'c. baxter kruger' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Result 7: 'The Shack Study Guide' by ['Wm. Paul Young', 'Brad Robison']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: exact match vs 'wm. paul young' (score: 1.00 -> 3.0 points)
+book-inventory     |   Total score: 1.00 (title:0.00*3 + author:1.00*1)
+book-inventory     | DEBUG: Result 8: 'Fill These Hearts' by ['Christopher West']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'christopher west' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Result 9: 'The Little Way of Ruthie Leming' by ['Rod Dreher']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'rod dreher' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Result 10: 'The Last Lecture' by ['Randy Pausch']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: no match vs 'randy pausch' (score: 0.00 -> 0.0 points)
+book-inventory     |   Total score: 0.00 (title:0.00*3 + author:0.00*1)
+book-inventory     | DEBUG: Best match score for this query: 3.7
+book-inventory     | DEBUG: SUCCESS! Returning match for 'Cross Roads Reflections' by ['Wm Paul Young'] (score: 3.7)
+book-inventory     | Metadata lookup result: {'title': 'Cross Roads Reflections', 'author': 'Wm Paul Young', 'publisher': '', 'year': 2013, 'isbn': '9781444790917', 'cover_url': 'https://books.google.com/books/content?id=Ac_vngEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api', 'google_books_link': 'https://books.google.com/books/about/Cross_Roads_Reflections.html?hl=&id=Ac_vngEACAAJ', 'description': 'The powerful story found in Cross Roads inspired and encouraged readers around the world. Now, CROSS ROADS REFLECTIONS provides an opportunity for you to revisit Tony and his redemption journey in a fresh and unique way. This 365-day devotional contains meaningful quotes from Cross Roads along with insightful and thought-provoking prayers written by the author, Wm. Paul Young, who also wrote the phenomenal bestseller, The Shack. It is designed to inspire, encourage, and uplift you every day of the year.', 'page_count': 384, 'genre': None, 'source': 'google_books', 'match_score': 3.7}
+book-inventory     | Prepared book_to_insert: {'title': 'Cross Roads', 'author': 'Wm. Paul Young', 'isbn': '9781444790917', 'publisher': '', 'year': 2013, 'genre': None, 'location': 'TV Room', 'condition': None, 'notes': None, 'cover_url': 'https://books.google.com/books/content?id=Ac_vngEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api', 'google_books_link': 'https://books.google.com/books/about/Cross_Roads_Reflections.html?hl=&id=Ac_vngEACAAJ', 'description': 'The powerful story found in Cross Roads inspired and encouraged readers around the world. Now, CROSS ROADS REFLECTIONS provides an opportunity for you to revisit Tony and his redemption journey in a fresh and unique way. This 365-day devotional contains meaningful quotes from Cross Roads along with insightful and thought-provoking prayers written by the author, Wm. Paul Young, who also wrote the phenomenal bestseller, The Shack. It is designed to inspire, encourage, and uplift you every day of the year.', 'page_count': 384}
+book-inventory     | Attempting database insertion...
+book-inventory     | Database insertion successful! Book ID: 18
+book-inventory     | Successfully added book: Cross Roads by Wm. Paul Young
+book-inventory     | 
+book-inventory     | --- Processing book 5/5 ---
+book-inventory     | Book data: {'title': 'The Book of the Dun Cow', 'author': 'Wangerin', 'original_title': 'The Book of the Dun Cow', 'original_author': 'Wangerin', 'confidence': 'medium', 'metadata_found': True, 'isbn': '9781626811034', 'publisher': 'Diversion Books', 'year': 2013, 'genre': 'Fiction', 'cover_url': 'https://books.google.com/books/content?id=K0XaRiKX9NcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', 'description': 'The timeless National Book Award-winning story of the epic struggle between good and evil. “Far and away the most literate and intelligent story of the year … Mr. Wangerin’s allegorical fantasy about the age-old struggle between good and evil produces a resonance; it is a taut string plucked that reverberates in memory” —New York Times “Belongs on the shelf with Animal Farm, Watership Down and The Lord of the Rings. It is, like them, an absorbing, fanciful parade of the war between good and evil. A powerful and enjoyable work of the imagination.” —Los Angeles Times In a time when the sun revolved around the Earth, and the animals could speak, Chauntecleer the Rooster rules justly over his kingdom. But while peace reigns for Chauntecleer, evil is brewing across the river, as the monstrous Cockatrice pillages his own lands and people, preparing for the return of Wyrm. Imprisoned within the Earth to contain this ancient evil, Wyrm is determined to return, with the help of Cockatrice. Keeping Wyrm in his prison is a task too great for any individual animal, so it is up to Chantecleer to rally all of the animals, great and small, to work together to keep the Earth safe once again. “Good and evil were never seen more distinctly not pitted more ferociously than in this animal fable, reverberating with the righteousness of the Bible or a medieval morality play … The animals are not mere literary symbols but are invested with a humanness all their won.” —The Saturday Evening Post “Wangerin’s story functions as a frightening representation of modern evil … a parable for adults to ponder.” —The Christian Century “Wangerin has so fluidly woven all these legends together into one small gem.” —Washington Post Book World', 'page_count': 292, 'location': 'TV Room'}
+book-inventory     | Extracted title: 'The Book of the Dun Cow'
+book-inventory     | Extracted author: 'Wangerin'
+book-inventory     | Starting metadata lookup for: 'The Book of the Dun Cow' by 'Wangerin'
+book-inventory     | DEBUG: Attempt 1: Trying query 'The Book of the Dun Cow Wangerin'
+book-inventory     | DEBUG: Query 'The Book of the Dun Cow Wangerin' returned 9 results
+book-inventory     | DEBUG: Result 1: 'The Book of God' by ['Walter Wangerin Jr.']
+book-inventory     |   Title: edit distance (0.60) (score: 0.42 -> 1.3 points)
+book-inventory     |   Author: name similarity (1.00) vs 'walter wangerin jr.' (score: 0.80 -> 2.4 points)
+book-inventory     |   Total score: 2.06 (title:0.42*3 + author:0.80*1)
+book-inventory     |   -> New best match!
+book-inventory     | DEBUG: Result 2: 'The Book of the Dun Cow' by ['Walter Wangerin']
+book-inventory     |   Title: exact match (score: 1.00 -> 3.0 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 3.90 (title:1.00*3 + author:0.90*1)
+book-inventory     |   -> New best match!
+book-inventory     | DEBUG: Result 3: 'The Second Book of the Dun Cow' by ['Walter Wangerin']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 3.60 (title:0.90*3 + author:0.90*1)
+book-inventory     | DEBUG: Result 4: 'The Third Book of the Dun Cow' by ['Walter Wangerin']
+book-inventory     |   Title: substring match (score: 0.90 -> 2.7 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 3.60 (title:0.90*3 + author:0.90*1)
+book-inventory     | DEBUG: Result 5: 'Jesus' by ['Walter Wangerin Jr.']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: name similarity (1.00) vs 'walter wangerin jr.' (score: 0.80 -> 2.4 points)
+book-inventory     |   Total score: 0.80 (title:0.00*3 + author:0.80*1)
+book-inventory     | DEBUG: Result 6: 'Whole Prayer' by ['Walter Wangerin, Jr.', 'Walter Wangerin']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 0.90 (title:0.00*3 + author:0.90*1)
+book-inventory     | DEBUG: Result 7: 'Letters from the Land of Cancer' by ['Walter Wangerin Jr.']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: name similarity (1.00) vs 'walter wangerin jr.' (score: 0.80 -> 2.4 points)
+book-inventory     |   Total score: 0.80 (title:0.00*3 + author:0.80*1)
+book-inventory     | DEBUG: Result 8: 'The Book of the Dun Cow' by ['Walter Wangerin']
+book-inventory     |   Title: exact match (score: 1.00 -> 3.0 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 3.90 (title:1.00*3 + author:0.90*1)
+book-inventory     | DEBUG: Result 9: 'As for Me and My House' by ['Walter Wangerin']
+book-inventory     |   Title: no match (score: 0.00 -> 0.0 points)
+book-inventory     |   Author: last name match vs 'walter wangerin' (score: 0.90 -> 2.7 points)
+book-inventory     |   Total score: 0.90 (title:0.00*3 + author:0.90*1)
+book-inventory     | DEBUG: Best match score for this query: 3.9
+book-inventory     | DEBUG: SUCCESS! Returning match for 'The Book of the Dun Cow' by ['Walter Wangerin'] (score: 3.9)
+book-inventory     | Metadata lookup result: {'title': 'The Book of the Dun Cow', 'author': 'Walter Wangerin', 'publisher': 'Diversion Books', 'year': 2013, 'isbn': '9781626811034', 'cover_url': 'https://books.google.com/books/content?id=K0XaRiKX9NcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', 'google_books_link': 'https://play.google.com/store/books/details?id=K0XaRiKX9NcC', 'description': 'The timeless National Book Award-winning story of the epic struggle between good and evil. “Far and away the most literate and intelligent story of the year … Mr. Wangerin’s allegorical fantasy about the age-old struggle between good and evil produces a resonance; it is a taut string plucked that reverberates in memory” —New York Times “Belongs on the shelf with Animal Farm, Watership Down and The Lord of the Rings. It is, like them, an absorbing, fanciful parade of the war between good and evil. A powerful and enjoyable work of the imagination.” —Los Angeles Times In a time when the sun revolved around the Earth, and the animals could speak, Chauntecleer the Rooster rules justly over his kingdom. But while peace reigns for Chauntecleer, evil is brewing across the river, as the monstrous Cockatrice pillages his own lands and people, preparing for the return of Wyrm. Imprisoned within the Earth to contain this ancient evil, Wyrm is determined to return, with the help of Cockatrice. Keeping Wyrm in his prison is a task too great for any individual animal, so it is up to Chantecleer to rally all of the animals, great and small, to work together to keep the Earth safe once again. “Good and evil were never seen more distinctly not pitted more ferociously than in this animal fable, reverberating with the righteousness of the Bible or a medieval morality play … The animals are not mere literary symbols but are invested with a humanness all their won.” —The Saturday Evening Post “Wangerin’s story functions as a frightening representation of modern evil … a parable for adults to ponder.” —The Christian Century “Wangerin has so fluidly woven all these legends together into one small gem.” —Washington Post Book World', 'page_count': 292, 'genre': 'Fiction', 'source': 'google_books', 'match_score': 3.9}
+book-inventory     | Prepared book_to_insert: {'title': 'The Book of the Dun Cow', 'author': 'Wangerin', 'isbn': '9781626811034', 'publisher': 'Diversion Books', 'year': 2013, 'genre': 'Fiction', 'location': 'TV Room', 'condition': None, 'notes': None, 'cover_url': 'https://books.google.com/books/content?id=K0XaRiKX9NcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', 'google_books_link': 'https://play.google.com/store/books/details?id=K0XaRiKX9NcC', 'description': 'The timeless National Book Award-winning story of the epic struggle between good and evil. “Far and away the most literate and intelligent story of the year … Mr. Wangerin’s allegorical fantasy about the age-old struggle between good and evil produces a resonance; it is a taut string plucked that reverberates in memory” —New York Times “Belongs on the shelf with Animal Farm, Watership Down and The Lord of the Rings. It is, like them, an absorbing, fanciful parade of the war between good and evil. A powerful and enjoyable work of the imagination.” —Los Angeles Times In a time when the sun revolved around the Earth, and the animals could speak, Chauntecleer the Rooster rules justly over his kingdom. But while peace reigns for Chauntecleer, evil is brewing across the river, as the monstrous Cockatrice pillages his own lands and people, preparing for the return of Wyrm. Imprisoned within the Earth to contain this ancient evil, Wyrm is determined to return, with the help of Cockatrice. Keeping Wyrm in his prison is a task too great for any individual animal, so it is up to Chantecleer to rally all of the animals, great and small, to work together to keep the Earth safe once again. “Good and evil were never seen more distinctly not pitted more ferociously than in this animal fable, reverberating with the righteousness of the Bible or a medieval morality play … The animals are not mere literary symbols but are invested with a humanness all their won.” —The Saturday Evening Post “Wangerin’s story functions as a frightening representation of modern evil … a parable for adults to ponder.” —The Christian Century “Wangerin has so fluidly woven all these legends together into one small gem.” —Washington Post Book World', 'page_count': 292}
+book-inventory     | Attempting database insertion...
+book-inventory     | Database insertion successful! Book ID: 19
+book-inventory     | Successfully added book: The Book of the Dun Cow by Wangerin
+book-inventory     | 
+book-inventory     | === SCAN AND ADD SUMMARY ===
+book-inventory     | Total books processed: 5
+book-inventory     | Successfully added: 5
+book-inventory     | Errors: 0
+book-inventory     | Added books: [{'id': 15, 'title': "What's So Amazing About Grace?", 'author': 'Philip Yancey'}, {'id': 16, 'title': 'Kisses from Kate', 'author': 'Katie Davis'}, {'id': 17, 'title': 'The Book of the Dun Cow', 'author': 'Wangerin'}, {'id': 18, 'title': 'Cross Roads', 'author': 'Wm. Paul Young'}, {'id': 19, 'title': 'The Book of the Dun Cow', 'author': 'Wangerin'}]
+book-inventory     | Errors list: []
+book-inventory     | INFO:     10.10.10.1:15985 - "POST /api/scan-and-add HTTP/1.1" 200 OK
+book-inventory     | INFO:     10.10.10.1:15985 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:39862 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:38704 - "GET / HTTP/1.1" 200 OK
+book-inventory     | INFO:     127.0.0.1:47878 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | init_tokenizer: initializing tokenizer for type 2
+bookshelf-scanner  | load: special tokens cache size = 944
+bookshelf-scanner  | load: token to piece cache size = 0.3151 MB
+bookshelf-scanner  | print_info: arch             = phi2
+bookshelf-scanner  | print_info: vocab_only       = 0
+bookshelf-scanner  | print_info: n_ctx_train      = 2048
+bookshelf-scanner  | print_info: n_embd           = 2048
+bookshelf-scanner  | print_info: n_layer          = 24
+bookshelf-scanner  | print_info: n_head           = 32
+bookshelf-scanner  | print_info: n_head_kv        = 32
+bookshelf-scanner  | print_info: n_rot            = 32
+bookshelf-scanner  | print_info: n_swa            = 0
+bookshelf-scanner  | print_info: is_swa_any       = 0
+bookshelf-scanner  | print_info: n_embd_head_k    = 64
+bookshelf-scanner  | print_info: n_embd_head_v    = 64
+bookshelf-scanner  | print_info: n_gqa            = 1
+bookshelf-scanner  | print_info: n_embd_k_gqa     = 2048
+bookshelf-scanner  | print_info: n_embd_v_gqa     = 2048
+bookshelf-scanner  | print_info: f_norm_eps       = 1.0e-05
+bookshelf-scanner  | print_info: f_norm_rms_eps   = 0.0e+00
+bookshelf-scanner  | print_info: f_clamp_kqv      = 0.0e+00
+bookshelf-scanner  | print_info: f_max_alibi_bias = 0.0e+00
+bookshelf-scanner  | print_info: f_logit_scale    = 0.0e+00
+bookshelf-scanner  | print_info: f_attn_scale     = 0.0e+00
+bookshelf-scanner  | print_info: n_ff             = 8192
+bookshelf-scanner  | print_info: n_expert         = 0
+bookshelf-scanner  | print_info: n_expert_used    = 0
+bookshelf-scanner  | print_info: causal attn      = 1
+bookshelf-scanner  | print_info: pooling type     = 0
+bookshelf-scanner  | print_info: rope type        = 2
+bookshelf-scanner  | print_info: rope scaling     = linear
+bookshelf-scanner  | print_info: freq_base_train  = 10000.0
+bookshelf-scanner  | print_info: freq_scale_train = 1
+bookshelf-scanner  | print_info: n_ctx_orig_yarn  = 2048
+bookshelf-scanner  | print_info: rope_finetuned   = unknown
+bookshelf-scanner  | print_info: model type       = 1B
+bookshelf-scanner  | print_info: model params     = 1.42 B
+bookshelf-scanner  | print_info: general.name     = moondream2
+bookshelf-scanner  | print_info: vocab type       = BPE
+bookshelf-scanner  | print_info: n_vocab          = 51200
+bookshelf-scanner  | print_info: n_merges         = 50000
+bookshelf-scanner  | print_info: BOS token        = 50256 '<|endoftext|>'
+bookshelf-scanner  | print_info: EOS token        = 50256 '<|endoftext|>'
+bookshelf-scanner  | print_info: EOT token        = 50256 '<|endoftext|>'
+bookshelf-scanner  | print_info: UNK token        = 50256 '<|endoftext|>'
+bookshelf-scanner  | print_info: LF token         = 198 'Ċ'
+bookshelf-scanner  | print_info: EOG token        = 50256 '<|endoftext|>'
+bookshelf-scanner  | print_info: max token length = 256
+bookshelf-scanner  | load_tensors: loading model tensors, this can take a while... (mmap = true)
+bookshelf-scanner  | load_tensors: layer   0 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   1 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   2 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   3 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   4 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   5 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   6 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   7 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   8 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   9 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  10 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  11 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  12 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  13 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  14 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  15 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  16 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  17 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  18 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  19 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  20 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  21 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  22 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  23 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  24 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: tensor 'token_embd.weight' (q4_K) (and 184 others) cannot be used with preferred buffer type CPU_REPACK, using CPU instead
+bookshelf-scanner  | load_tensors:   CPU_REPACK model buffer size =   378.00 MiB
+bookshelf-scanner  | load_tensors:   CPU_Mapped model buffer size =   865.05 MiB
+bookshelf-scanner  | repack: repack tensor blk.0.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.0.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.1.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.1.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.2.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.2.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.3.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.3.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.3.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.4.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.4.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.4.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.5.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.5.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.6.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.6.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.6.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.7.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.7.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.7.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.8.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.8.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.9.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.9.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.9.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.10.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.10.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.10.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.11.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.11.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.12.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.12.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.12.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.13.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.13.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.13.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.14.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.14.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.15.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.15.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.15.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.16.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.16.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.16.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.17.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.17.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.18.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.18.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.18.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.19.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.19.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.19.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.20.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.20.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.21.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.21.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.22.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.22.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.23.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.23.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | ........................................
+bookshelf-scanner  | llama_context: constructing llama_context
+bookshelf-scanner  | llama_context: n_seq_max     = 1
+bookshelf-scanner  | llama_context: n_ctx         = 1024
+bookshelf-scanner  | llama_context: n_ctx_per_seq = 1024
+bookshelf-scanner  | llama_context: n_batch       = 512
+bookshelf-scanner  | llama_context: n_ubatch      = 512
+bookshelf-scanner  | llama_context: causal_attn   = 1
+bookshelf-scanner  | llama_context: flash_attn    = 0
+bookshelf-scanner  | llama_context: freq_base     = 10000.0
+bookshelf-scanner  | llama_context: freq_scale    = 1
+bookshelf-scanner  | llama_context: n_ctx_per_seq (1024) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+bookshelf-scanner  | set_abort_callback: call
+bookshelf-scanner  | llama_context:        CPU  output buffer size =     0.20 MiB
+bookshelf-scanner  | create_memory: n_ctx = 1024 (padded)
+bookshelf-scanner  | llama_kv_cache_unified: layer   0: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   1: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   2: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   3: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   4: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   5: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   6: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   7: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   8: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   9: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  10: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  11: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  12: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  13: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  14: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  15: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  16: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  17: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  18: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  19: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  20: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  21: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  22: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  23: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified:        CPU KV buffer size =   192.00 MiB
+bookshelf-scanner  | llama_kv_cache_unified: size =  192.00 MiB (  1024 cells,  24 layers,  1 seqs), K (f16):   96.00 MiB, V (f16):   96.00 MiB
+bookshelf-scanner  | llama_kv_cache_unified: LLAMA_SET_ROWS=0, using old ggml_cpy() method for backwards compatibility
+bookshelf-scanner  | llama_context: enumerating backends
+bookshelf-scanner  | llama_context: backend_ptrs.size() = 1
+bookshelf-scanner  | llama_context: max_nodes = 65536
+bookshelf-scanner  | llama_context: worst-case: n_tokens = 512, n_seqs = 1, n_outputs = 0
+bookshelf-scanner  | graph_reserve: reserving a graph for ubatch with n_tokens =  512, n_seqs =  1, n_outputs =  512
+bookshelf-scanner  | graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+bookshelf-scanner  | graph_reserve: reserving a graph for ubatch with n_tokens =  512, n_seqs =  1, n_outputs =  512
+bookshelf-scanner  | llama_context:        CPU compute buffer size =   104.00 MiB
+bookshelf-scanner  | llama_context: graph nodes  = 945
+bookshelf-scanner  | llama_context: graph splits = 1
+bookshelf-scanner  | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+bookshelf-scanner  | Model metadata: {'tokenizer.ggml.unknown_token_id': '50256', 'tokenizer.ggml.eos_token_id': '50256', 'tokenizer.ggml.bos_token_id': '50256', 'general.architecture': 'phi2', 'general.name': 'moondream2', 'phi2.context_length': '2048', 'general.quantization_version': '2', 'tokenizer.ggml.model': 'gpt2', 'tokenizer.ggml.add_bos_token': 'false', 'phi2.embedding_length': '2048', 'phi2.attention.head_count': '32', 'phi2.attention.head_count_kv': '32', 'phi2.feed_forward_length': '8192', 'phi2.attention.layer_norm_epsilon': '0.000010', 'phi2.block_count': '24', 'phi2.rope.dimension_count': '32', 'general.file_type': '15'}
+bookshelf-scanner  | INFO:     Started server process [16]
+bookshelf-scanner  | INFO:     Waiting for application startup.
+bookshelf-scanner  | INFO:     Application startup complete.
+bookshelf-scanner  | INFO:     127.0.0.1:40380 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     127.0.0.1:33728 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     127.0.0.1:43764 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     127.0.0.1:57518 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     Shutting down
+bookshelf-scanner  | INFO:     Waiting for application shutdown.
+bookshelf-scanner  | INFO:     Application shutdown complete.
+bookshelf-scanner  | INFO:     Finished server process [16]
+bookshelf-scanner  | INFO:     Stopping reloader process [1]
+bookshelf-scanner  | INFO:     Will watch for changes in these directories: ['/app']
+bookshelf-scanner  | INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+bookshelf-scanner  | INFO:     Started reloader process [1] using WatchFiles
+bookshelf-scanner  | llama_model_loader: loaded meta data with 20 key-value pairs and 245 tensors from backend-models/moondream2-text-model-Q4_K_M.gguf (version GGUF V3 (latest))
+bookshelf-scanner  | llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+bookshelf-scanner  | llama_model_loader: - kv   0:                       general.architecture str              = phi2
+bookshelf-scanner  | llama_model_loader: - kv   1:                               general.name str              = moondream2
+bookshelf-scanner  | llama_model_loader: - kv   2:                        phi2.context_length u32              = 2048
+bookshelf-scanner  | llama_model_loader: - kv   3:                      phi2.embedding_length u32              = 2048
+bookshelf-scanner  | llama_model_loader: - kv   4:                   phi2.feed_forward_length u32              = 8192
+bookshelf-scanner  | llama_model_loader: - kv   5:                           phi2.block_count u32              = 24
+bookshelf-scanner  | llama_model_loader: - kv   6:                  phi2.attention.head_count u32              = 32
+bookshelf-scanner  | llama_model_loader: - kv   7:               phi2.attention.head_count_kv u32              = 32
+bookshelf-scanner  | llama_model_loader: - kv   8:          phi2.attention.layer_norm_epsilon f32              = 0.000010
+bookshelf-scanner  | llama_model_loader: - kv   9:                  phi2.rope.dimension_count u32              = 32
+bookshelf-scanner  | llama_model_loader: - kv  10:                          general.file_type u32              = 15
+bookshelf-scanner  | llama_model_loader: - kv  11:               tokenizer.ggml.add_bos_token bool             = false
+bookshelf-scanner  | llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = gpt2
+bookshelf-scanner  | llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,51200]   = ["!", "\"", "#", "$", "%", "&", "'", ...
+bookshelf-scanner  | llama_model_loader: - kv  14:                  tokenizer.ggml.token_type arr[i32,51200]   = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+bookshelf-scanner  | llama_model_loader: - kv  15:                      tokenizer.ggml.merges arr[str,50000]   = ["Ġ t", "Ġ a", "h e", "i n", "r e",...
+bookshelf-scanner  | llama_model_loader: - kv  16:                tokenizer.ggml.bos_token_id u32              = 50256
+bookshelf-scanner  | llama_model_loader: - kv  17:                tokenizer.ggml.eos_token_id u32              = 50256
+bookshelf-scanner  | llama_model_loader: - kv  18:            tokenizer.ggml.unknown_token_id u32              = 50256
+bookshelf-scanner  | llama_model_loader: - kv  19:               general.quantization_version u32              = 2
+bookshelf-scanner  | llama_model_loader: - type  f32:  147 tensors
+bookshelf-scanner  | llama_model_loader: - type q4_K:   61 tensors
+bookshelf-scanner  | llama_model_loader: - type q5_K:   24 tensors
+bookshelf-scanner  | llama_model_loader: - type q6_K:   13 tensors
+bookshelf-scanner  | print_info: file format = GGUF V3 (latest)
+bookshelf-scanner  | print_info: file type   = Q4_K - Medium
+bookshelf-scanner  | print_info: file size   = 874.05 MiB (5.17 BPW) 
+bookshelf-scanner  | load: missing pre-tokenizer type, using: 'default'
+bookshelf-scanner  | load:                                             
+bookshelf-scanner  | load: ************************************        
+bookshelf-scanner  | load: GENERATION QUALITY WILL BE DEGRADED!        
+bookshelf-scanner  | load: CONSIDER REGENERATING THE MODEL             
+bookshelf-scanner  | load: ************************************        
+bookshelf-scanner  | load:                                             
+bookshelf-scanner  | init_tokenizer: initializing tokenizer for type 2
+bookshelf-scanner  | load: special tokens cache size = 944
+bookshelf-scanner  | load: token to piece cache size = 0.3151 MB
+bookshelf-scanner  | print_info: arch             = phi2
+bookshelf-scanner  | print_info: vocab_only       = 0
+bookshelf-scanner  | print_info: n_ctx_train      = 2048
+bookshelf-scanner  | print_info: n_embd           = 2048
+bookshelf-scanner  | print_info: n_layer          = 24
+bookshelf-scanner  | print_info: n_head           = 32
+bookshelf-scanner  | print_info: n_head_kv        = 32
+bookshelf-scanner  | print_info: n_rot            = 32
+bookshelf-scanner  | print_info: n_swa            = 0
+bookshelf-scanner  | print_info: is_swa_any       = 0
+bookshelf-scanner  | print_info: n_embd_head_k    = 64
+bookshelf-scanner  | print_info: n_embd_head_v    = 64
+bookshelf-scanner  | print_info: n_gqa            = 1
+bookshelf-scanner  | print_info: n_embd_k_gqa     = 2048
+bookshelf-scanner  | print_info: n_embd_v_gqa     = 2048
+bookshelf-scanner  | print_info: f_norm_eps       = 1.0e-05
+bookshelf-scanner  | print_info: f_norm_rms_eps   = 0.0e+00
+bookshelf-scanner  | print_info: f_clamp_kqv      = 0.0e+00
+bookshelf-scanner  | print_info: f_max_alibi_bias = 0.0e+00
+bookshelf-scanner  | print_info: f_logit_scale    = 0.0e+00
+bookshelf-scanner  | print_info: f_attn_scale     = 0.0e+00
+bookshelf-scanner  | print_info: n_ff             = 8192
+bookshelf-scanner  | print_info: n_expert         = 0
+bookshelf-scanner  | print_info: n_expert_used    = 0
+bookshelf-scanner  | print_info: causal attn      = 1
+bookshelf-scanner  | print_info: pooling type     = 0
+bookshelf-scanner  | print_info: rope type        = 2
+bookshelf-scanner  | print_info: rope scaling     = linear
+bookshelf-scanner  | print_info: freq_base_train  = 10000.0
+bookshelf-scanner  | print_info: freq_scale_train = 1
+bookshelf-scanner  | print_info: n_ctx_orig_yarn  = 2048
+bookshelf-scanner  | print_info: rope_finetuned   = unknown
+bookshelf-scanner  | print_info: model type       = 1B
+bookshelf-scanner  | print_info: model params     = 1.42 B
+bookshelf-scanner  | print_info: general.name     = moondream2
+bookshelf-scanner  | print_info: vocab type       = BPE
+bookshelf-scanner  | print_info: n_vocab          = 51200
+bookshelf-scanner  | print_info: n_merges         = 50000
+bookshelf-scanner  | print_info: BOS token        = 50256 '<|endoftext|>'
+bookshelf-scanner  | print_info: EOS token        = 50256 '<|endoftext|>'
+bookshelf-scanner  | print_info: EOT token        = 50256 '<|endoftext|>'
+bookshelf-scanner  | print_info: UNK token        = 50256 '<|endoftext|>'
+bookshelf-scanner  | print_info: LF token         = 198 'Ċ'
+bookshelf-scanner  | print_info: EOG token        = 50256 '<|endoftext|>'
+bookshelf-scanner  | print_info: max token length = 256
+bookshelf-scanner  | load_tensors: loading model tensors, this can take a while... (mmap = true)
+bookshelf-scanner  | load_tensors: layer   0 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   1 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   2 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   3 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   4 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   5 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   6 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   7 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   8 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   9 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  10 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  11 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  12 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  13 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  14 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  15 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  16 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  17 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  18 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  19 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  20 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  21 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  22 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  23 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  24 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: tensor 'token_embd.weight' (q4_K) (and 184 others) cannot be used with preferred buffer type CPU_REPACK, using CPU instead
+bookshelf-scanner  | load_tensors:   CPU_REPACK model buffer size =   378.00 MiB
+bookshelf-scanner  | load_tensors:   CPU_Mapped model buffer size =   865.05 MiB
+bookshelf-scanner  | repack: repack tensor blk.0.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.0.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.1.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.1.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.2.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.2.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.3.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.3.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.3.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.4.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.4.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.4.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.5.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.5.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.6.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.6.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.6.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.7.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.7.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.7.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.8.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.8.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.9.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.9.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.9.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.10.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.10.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.10.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.11.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.11.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.12.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.12.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.12.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.13.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.13.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.13.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.14.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.14.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.15.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.15.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.15.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.16.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.16.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.16.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.17.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.17.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.18.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.18.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.18.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.19.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.19.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.19.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.20.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.20.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.21.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.21.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.22.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.22.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.23.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.23.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | ........................................
+bookshelf-scanner  | llama_context: constructing llama_context
+bookshelf-scanner  | llama_context: n_seq_max     = 1
+bookshelf-scanner  | llama_context: n_ctx         = 1024
+bookshelf-scanner  | llama_context: n_ctx_per_seq = 1024
+bookshelf-scanner  | llama_context: n_batch       = 512
+bookshelf-scanner  | llama_context: n_ubatch      = 512
+bookshelf-scanner  | llama_context: causal_attn   = 1
+bookshelf-scanner  | llama_context: flash_attn    = 0
+bookshelf-scanner  | llama_context: freq_base     = 10000.0
+bookshelf-scanner  | llama_context: freq_scale    = 1
+bookshelf-scanner  | llama_context: n_ctx_per_seq (1024) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+bookshelf-scanner  | set_abort_callback: call
+bookshelf-scanner  | llama_context:        CPU  output buffer size =     0.20 MiB
+bookshelf-scanner  | create_memory: n_ctx = 1024 (padded)
+bookshelf-scanner  | llama_kv_cache_unified: layer   0: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   1: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   2: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   3: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   4: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   5: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   6: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   7: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   8: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   9: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  10: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  11: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  12: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  13: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  14: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  15: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  16: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  17: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  18: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  19: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  20: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  21: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  22: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  23: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified:        CPU KV buffer size =   192.00 MiB
+bookshelf-scanner  | llama_kv_cache_unified: size =  192.00 MiB (  1024 cells,  24 layers,  1 seqs), K (f16):   96.00 MiB, V (f16):   96.00 MiB
+bookshelf-scanner  | llama_kv_cache_unified: LLAMA_SET_ROWS=0, using old ggml_cpy() method for backwards compatibility
+bookshelf-scanner  | llama_context: enumerating backends
+bookshelf-scanner  | llama_context: backend_ptrs.size() = 1
+bookshelf-scanner  | llama_context: max_nodes = 65536
+bookshelf-scanner  | llama_context: worst-case: n_tokens = 512, n_seqs = 1, n_outputs = 0
+bookshelf-scanner  | graph_reserve: reserving a graph for ubatch with n_tokens =  512, n_seqs =  1, n_outputs =  512
+bookshelf-scanner  | graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+bookshelf-scanner  | graph_reserve: reserving a graph for ubatch with n_tokens =  512, n_seqs =  1, n_outputs =  512
+bookshelf-scanner  | llama_context:        CPU compute buffer size =   104.00 MiB
+bookshelf-scanner  | llama_context: graph nodes  = 945
+bookshelf-scanner  | llama_context: graph splits = 1
+bookshelf-scanner  | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+bookshelf-scanner  | Model metadata: {'tokenizer.ggml.unknown_token_id': '50256', 'tokenizer.ggml.eos_token_id': '50256', 'tokenizer.ggml.bos_token_id': '50256', 'general.architecture': 'phi2', 'general.name': 'moondream2', 'phi2.context_length': '2048', 'general.quantization_version': '2', 'tokenizer.ggml.model': 'gpt2', 'tokenizer.ggml.add_bos_token': 'false', 'phi2.embedding_length': '2048', 'phi2.attention.head_count': '32', 'phi2.attention.head_count_kv': '32', 'phi2.feed_forward_length': '8192', 'phi2.attention.layer_norm_epsilon': '0.000010', 'phi2.block_count': '24', 'phi2.rope.dimension_count': '32', 'general.file_type': '15'}
+bookshelf-scanner  | INFO:     Started server process [16]
+bookshelf-scanner  | INFO:     Waiting for application startup.
+bookshelf-scanner  | INFO:     Application startup complete.
+bookshelf-scanner  | INFO:     127.0.0.1:55796 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     127.0.0.1:51156 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     172.18.0.2:47452 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     172.18.0.2:52748 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:    Async Processing image: /app/output/temp_1752639938_IMG_2441b.jpg
+bookshelf-scanner  | 
+bookshelf-scanner  | WARNING ⚠️ imgsz=[871] must be multiple of max stride 32, updating to [896]
+bookshelf-scanner  | 0: 896x320 5 books, 6072.5ms
+bookshelf-scanner  | Speed: 3.5ms preprocess, 6072.5ms inference, 71.0ms postprocess per image at shape (1, 3, 896, 320)
+bookshelf-scanner  | INFO:    Segmented image saved to /app/output/segmentation/temp_1752639938_IMG_2441b.jpg
+bookshelf-scanner  | INFO:     172.18.0.2:52754 - "POST /api/predict/ HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:    Sent segmented image
+bookshelf-scanner  | image_tokens->nx = 729
+bookshelf-scanner  | image_tokens->ny = 1
+bookshelf-scanner  | batch_f32 size = 1
+bookshelf-scanner  | add_text: 
+bookshelf-scanner  | 
+bookshelf-scanner  | Question: You are looking at a book spine. Read only the visible text on the spine.
+bookshelf-scanner  | 
+bookshelf-scanner  | INSTRUCTIONS:
+bookshelf-scanner  | - Extract ONLY the title and author that you can clearly see
+bookshelf-scanner  | - Do NOT make up or invent text that isn't clearly visible
+bookshelf-scanner  | - Do NOT add descriptive phrases or elaborations
+bookshelf-scanner  | - If the text is blurry or unclear, give your best attempt at the visible words only
+bookshelf-scanner  | - Format as: Title by Author (without quotes)
+bookshelf-scanner  | - If no author is visible, just give the title
+bookshelf-scanner  | - If you cannot make out any text clearly, respond 'No book'
+bookshelf-scanner  | 
+bookshelf-scanner  | Examples:
+bookshelf-scanner  | - Good: "What's So Amazing About Grace by Philip Yancey"
+bookshelf-scanner  | - Good: "Kisses from Kate by Katie Davis"
+bookshelf-scanner  | - Bad: "When Is Grace? About Grace?: A Personal Reflection on the Meaning of Life"
+bookshelf-scanner  | 
+bookshelf-scanner  | What do you see on this book spine?
+bookshelf-scanner  | 
+bookshelf-scanner  | Answer:
+bookshelf-scanner  | Llama.generate: 930 prefix-match hit, remaining 1 prompt tokens to eval
+bookshelf-scanner  | llama_perf_context_print:        load time =      54.62 ms
+bookshelf-scanner  | llama_perf_context_print: prompt eval time =   15871.64 ms /   932 tokens (   17.03 ms per token,    58.72 tokens per second)
+bookshelf-scanner  | llama_perf_context_print:        eval time =    1928.42 ms /    34 runs   (   56.72 ms per token,    17.63 tokens per second)
+bookshelf-scanner  | llama_perf_context_print:       total time =    2001.68 ms /   966 tokens
+bookshelf-scanner  | INFO:    Book 1: The image shows the spine of a book with the title "What's So Amazing About Grace?" written in white. The author's name is also visible on the spine.
+bookshelf-scanner  | image_tokens->nx = 729
+bookshelf-scanner  | image_tokens->ny = 1
+bookshelf-scanner  | batch_f32 size = 1
+bookshelf-scanner  | add_text: 
+bookshelf-scanner  | 
+bookshelf-scanner  | Question: You are looking at a book spine. Read only the visible text on the spine.
+bookshelf-scanner  | 
+bookshelf-scanner  | INSTRUCTIONS:
+bookshelf-scanner  | - Extract ONLY the title and author that you can clearly see
+bookshelf-scanner  | - Do NOT make up or invent text that isn't clearly visible
+bookshelf-scanner  | - Do NOT add descriptive phrases or elaborations
+bookshelf-scanner  | - If the text is blurry or unclear, give your best attempt at the visible words only
+bookshelf-scanner  | - Format as: Title by Author (without quotes)
+bookshelf-scanner  | - If no author is visible, just give the title
+bookshelf-scanner  | - If you cannot make out any text clearly, respond 'No book'
+bookshelf-scanner  | 
+bookshelf-scanner  | Examples:
+bookshelf-scanner  | - Good: "What's So Amazing About Grace by Philip Yancey"
+bookshelf-scanner  | - Good: "Kisses from Kate by Katie Davis"
+bookshelf-scanner  | - Bad: "When Is Grace? About Grace?: A Personal Reflection on the Meaning of Life"
+bookshelf-scanner  | 
+bookshelf-scanner  | What do you see on this book spine?
+bookshelf-scanner  | 
+bookshelf-scanner  | Answer:
+bookshelf-scanner  | Llama.generate: 930 prefix-match hit, remaining 1 prompt tokens to eval
+bookshelf-scanner  | llama_perf_context_print:        load time =      54.62 ms
+bookshelf-scanner  | llama_perf_context_print: prompt eval time =   15920.59 ms /   932 tokens (   17.08 ms per token,    58.54 tokens per second)
+bookshelf-scanner  | llama_perf_context_print:        eval time =    2368.32 ms /    45 runs   (   52.63 ms per token,    19.00 tokens per second)
+bookshelf-scanner  | llama_perf_context_print:       total time =    2445.35 ms /   977 tokens
+bookshelf-scanner  | INFO:    Book 2: The spine of the book is blue and white. It features the title "Kisses from Kate" written in white letters, and the author's name "Katie Davis" written in smaller white letters below the title.
+bookshelf-scanner  | image_tokens->nx = 729
+bookshelf-scanner  | image_tokens->ny = 1
+bookshelf-scanner  | batch_f32 size = 1
+bookshelf-scanner  | add_text: 
+bookshelf-scanner  | 
+bookshelf-scanner  | Question: You are looking at a book spine. Read only the visible text on the spine.
+bookshelf-scanner  | 
+bookshelf-scanner  | INSTRUCTIONS:
+bookshelf-scanner  | - Extract ONLY the title and author that you can clearly see
+bookshelf-scanner  | - Do NOT make up or invent text that isn't clearly visible
+bookshelf-scanner  | - Do NOT add descriptive phrases or elaborations
+bookshelf-scanner  | - If the text is blurry or unclear, give your best attempt at the visible words only
+bookshelf-scanner  | - Format as: Title by Author (without quotes)
+bookshelf-scanner  | - If no author is visible, just give the title
+bookshelf-scanner  | - If you cannot make out any text clearly, respond 'No book'
+bookshelf-scanner  | 
+bookshelf-scanner  | Examples:
+bookshelf-scanner  | - Good: "What's So Amazing About Grace by Philip Yancey"
+bookshelf-scanner  | - Good: "Kisses from Kate by Katie Davis"
+bookshelf-scanner  | - Bad: "When Is Grace? About Grace?: A Personal Reflection on the Meaning of Life"
+bookshelf-scanner  | 
+bookshelf-scanner  | What do you see on this book spine?
+bookshelf-scanner  | 
+bookshelf-scanner  | Answer:
+bookshelf-scanner  | INFO:     127.0.0.1:51320 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | Llama.generate: 930 prefix-match hit, remaining 1 prompt tokens to eval
+bookshelf-scanner  | llama_perf_context_print:        load time =      54.62 ms
+bookshelf-scanner  | llama_perf_context_print: prompt eval time =   15840.94 ms /   932 tokens (   17.00 ms per token,    58.83 tokens per second)
+bookshelf-scanner  | llama_perf_context_print:        eval time =    1272.96 ms /    24 runs   (   53.04 ms per token,    18.85 tokens per second)
+bookshelf-scanner  | llama_perf_context_print:       total time =    1338.96 ms /   956 tokens
+bookshelf-scanner  | INFO:    Book 3: The spine of the book is gray and features the title "The Book of the Dun Cow" by Wangerin.
+bookshelf-scanner  | image_tokens->nx = 729
+bookshelf-scanner  | image_tokens->ny = 1
+bookshelf-scanner  | batch_f32 size = 1
+bookshelf-scanner  | add_text: 
+bookshelf-scanner  | 
+bookshelf-scanner  | Question: You are looking at a book spine. Read only the visible text on the spine.
+bookshelf-scanner  | 
+bookshelf-scanner  | INSTRUCTIONS:
+bookshelf-scanner  | - Extract ONLY the title and author that you can clearly see
+bookshelf-scanner  | - Do NOT make up or invent text that isn't clearly visible
+bookshelf-scanner  | - Do NOT add descriptive phrases or elaborations
+bookshelf-scanner  | - If the text is blurry or unclear, give your best attempt at the visible words only
+bookshelf-scanner  | - Format as: Title by Author (without quotes)
+bookshelf-scanner  | - If no author is visible, just give the title
+bookshelf-scanner  | - If you cannot make out any text clearly, respond 'No book'
+bookshelf-scanner  | 
+bookshelf-scanner  | Examples:
+bookshelf-scanner  | - Good: "What's So Amazing About Grace by Philip Yancey"
+bookshelf-scanner  | - Good: "Kisses from Kate by Katie Davis"
+bookshelf-scanner  | - Bad: "When Is Grace? About Grace?: A Personal Reflection on the Meaning of Life"
+bookshelf-scanner  | 
+bookshelf-scanner  | What do you see on this book spine?
+bookshelf-scanner  | 
+bookshelf-scanner  | Answer:
+bookshelf-scanner  | Llama.generate: 930 prefix-match hit, remaining 1 prompt tokens to eval
+bookshelf-scanner  | llama_perf_context_print:        load time =      54.62 ms
+bookshelf-scanner  | llama_perf_context_print: prompt eval time =   15664.67 ms /   932 tokens (   16.81 ms per token,    59.50 tokens per second)
+bookshelf-scanner  | llama_perf_context_print:        eval time =    1046.41 ms /    20 runs   (   52.32 ms per token,    19.11 tokens per second)
+bookshelf-scanner  | llama_perf_context_print:       total time =    1106.98 ms /   952 tokens
+bookshelf-scanner  | INFO:    Book 4: The book spine features the title "Cross Roads" and the author "Wm. Paul Young".
+bookshelf-scanner  | image_tokens->nx = 729
+bookshelf-scanner  | image_tokens->ny = 1
+bookshelf-scanner  | batch_f32 size = 1
+bookshelf-scanner  | add_text: 
+bookshelf-scanner  | 
+bookshelf-scanner  | Question: You are looking at a book spine. Read only the visible text on the spine.
+bookshelf-scanner  | 
+bookshelf-scanner  | INSTRUCTIONS:
+bookshelf-scanner  | - Extract ONLY the title and author that you can clearly see
+bookshelf-scanner  | - Do NOT make up or invent text that isn't clearly visible
+bookshelf-scanner  | - Do NOT add descriptive phrases or elaborations
+bookshelf-scanner  | - If the text is blurry or unclear, give your best attempt at the visible words only
+bookshelf-scanner  | - Format as: Title by Author (without quotes)
+bookshelf-scanner  | - If no author is visible, just give the title
+bookshelf-scanner  | - If you cannot make out any text clearly, respond 'No book'
+bookshelf-scanner  | 
+bookshelf-scanner  | Examples:
+bookshelf-scanner  | - Good: "What's So Amazing About Grace by Philip Yancey"
+bookshelf-scanner  | - Good: "Kisses from Kate by Katie Davis"
+bookshelf-scanner  | - Bad: "When Is Grace? About Grace?: A Personal Reflection on the Meaning of Life"
+bookshelf-scanner  | 
+bookshelf-scanner  | What do you see on this book spine?
+bookshelf-scanner  | 
+bookshelf-scanner  | Answer:
+bookshelf-scanner  | Llama.generate: 930 prefix-match hit, remaining 1 prompt tokens to eval
+bookshelf-scanner  | INFO:     127.0.0.1:48826 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | llama_perf_context_print:        load time =      54.62 ms
+bookshelf-scanner  | llama_perf_context_print: prompt eval time =   15805.73 ms /   932 tokens (   16.96 ms per token,    58.97 tokens per second)
+bookshelf-scanner  | llama_perf_context_print:        eval time =    1827.42 ms /    35 runs   (   52.21 ms per token,    19.15 tokens per second)
+bookshelf-scanner  | llama_perf_context_print:       total time =    1899.58 ms /   967 tokens
+bookshelf-scanner  | INFO:    Book 5: The spine of the book is gray and white. The title of the book is "The Book of the Dun Cow" and the author's name is "Wangerin".
+bookshelf-scanner  | INFO:    Output directory cleaned up.
+bookshelf-scanner  | INFO:     127.0.0.1:54836 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     127.0.0.1:59546 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     127.0.0.1:60804 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     127.0.0.1:52048 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     127.0.0.1:54716 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     127.0.0.1:33976 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     127.0.0.1:51164 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     127.0.0.1:52054 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     127.0.0.1:40486 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     127.0.0.1:34616 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     127.0.0.1:41570 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     Shutting down
+bookshelf-scanner  | INFO:     Waiting for application shutdown.
+bookshelf-scanner  | INFO:     Application shutdown complete.
+bookshelf-scanner  | INFO:     Finished server process [16]
+bookshelf-scanner  | INFO:     Stopping reloader process [1]
+bookshelf-scanner  | INFO:     Will watch for changes in these directories: ['/app']
+bookshelf-scanner  | INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+bookshelf-scanner  | INFO:     Started reloader process [1] using WatchFiles
+bookshelf-scanner  | llama_model_loader: loaded meta data with 20 key-value pairs and 245 tensors from backend-models/moondream2-text-model-Q4_K_M.gguf (version GGUF V3 (latest))
+bookshelf-scanner  | llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+bookshelf-scanner  | llama_model_loader: - kv   0:                       general.architecture str              = phi2
+bookshelf-scanner  | llama_model_loader: - kv   1:                               general.name str              = moondream2
+bookshelf-scanner  | llama_model_loader: - kv   2:                        phi2.context_length u32              = 2048
+bookshelf-scanner  | llama_model_loader: - kv   3:                      phi2.embedding_length u32              = 2048
+bookshelf-scanner  | llama_model_loader: - kv   4:                   phi2.feed_forward_length u32              = 8192
+bookshelf-scanner  | llama_model_loader: - kv   5:                           phi2.block_count u32              = 24
+bookshelf-scanner  | llama_model_loader: - kv   6:                  phi2.attention.head_count u32              = 32
+bookshelf-scanner  | llama_model_loader: - kv   7:               phi2.attention.head_count_kv u32              = 32
+bookshelf-scanner  | llama_model_loader: - kv   8:          phi2.attention.layer_norm_epsilon f32              = 0.000010
+bookshelf-scanner  | llama_model_loader: - kv   9:                  phi2.rope.dimension_count u32              = 32
+bookshelf-scanner  | llama_model_loader: - kv  10:                          general.file_type u32              = 15
+bookshelf-scanner  | llama_model_loader: - kv  11:               tokenizer.ggml.add_bos_token bool             = false
+bookshelf-scanner  | llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = gpt2
+bookshelf-scanner  | llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,51200]   = ["!", "\"", "#", "$", "%", "&", "'", ...
+bookshelf-scanner  | llama_model_loader: - kv  14:                  tokenizer.ggml.token_type arr[i32,51200]   = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+bookshelf-scanner  | llama_model_loader: - kv  15:                      tokenizer.ggml.merges arr[str,50000]   = ["Ġ t", "Ġ a", "h e", "i n", "r e",...
+bookshelf-scanner  | llama_model_loader: - kv  16:                tokenizer.ggml.bos_token_id u32              = 50256
+bookshelf-scanner  | llama_model_loader: - kv  17:                tokenizer.ggml.eos_token_id u32              = 50256
+bookshelf-scanner  | llama_model_loader: - kv  18:            tokenizer.ggml.unknown_token_id u32              = 50256
+bookshelf-scanner  | llama_model_loader: - kv  19:               general.quantization_version u32              = 2
+bookshelf-scanner  | llama_model_loader: - type  f32:  147 tensors
+bookshelf-scanner  | llama_model_loader: - type q4_K:   61 tensors
+bookshelf-scanner  | llama_model_loader: - type q5_K:   24 tensors
+bookshelf-scanner  | llama_model_loader: - type q6_K:   13 tensors
+bookshelf-scanner  | print_info: file format = GGUF V3 (latest)
+bookshelf-scanner  | print_info: file type   = Q4_K - Medium
+bookshelf-scanner  | print_info: file size   = 874.05 MiB (5.17 BPW) 
+bookshelf-scanner  | load: missing pre-tokenizer type, using: 'default'
+bookshelf-scanner  | load:                                             
+bookshelf-scanner  | load: ************************************        
+bookshelf-scanner  | load: GENERATION QUALITY WILL BE DEGRADED!        
+bookshelf-scanner  | load: CONSIDER REGENERATING THE MODEL             
+bookshelf-scanner  | load: ************************************        
+bookshelf-scanner  | load:                                             
+bookshelf-scanner  | init_tokenizer: initializing tokenizer for type 2
+bookshelf-scanner  | load: special tokens cache size = 944
+bookshelf-scanner  | load: token to piece cache size = 0.3151 MB
+bookshelf-scanner  | print_info: arch             = phi2
+bookshelf-scanner  | print_info: vocab_only       = 0
+bookshelf-scanner  | print_info: n_ctx_train      = 2048
+bookshelf-scanner  | print_info: n_embd           = 2048
+bookshelf-scanner  | print_info: n_layer          = 24
+bookshelf-scanner  | print_info: n_head           = 32
+bookshelf-scanner  | print_info: n_head_kv        = 32
+bookshelf-scanner  | print_info: n_rot            = 32
+bookshelf-scanner  | print_info: n_swa            = 0
+bookshelf-scanner  | print_info: is_swa_any       = 0
+bookshelf-scanner  | print_info: n_embd_head_k    = 64
+bookshelf-scanner  | print_info: n_embd_head_v    = 64
+bookshelf-scanner  | print_info: n_gqa            = 1
+bookshelf-scanner  | print_info: n_embd_k_gqa     = 2048
+bookshelf-scanner  | print_info: n_embd_v_gqa     = 2048
+bookshelf-scanner  | print_info: f_norm_eps       = 1.0e-05
+bookshelf-scanner  | print_info: f_norm_rms_eps   = 0.0e+00
+bookshelf-scanner  | print_info: f_clamp_kqv      = 0.0e+00
+bookshelf-scanner  | print_info: f_max_alibi_bias = 0.0e+00
+bookshelf-scanner  | print_info: f_logit_scale    = 0.0e+00
+bookshelf-scanner  | print_info: f_attn_scale     = 0.0e+00
+bookshelf-scanner  | print_info: n_ff             = 8192
+bookshelf-scanner  | print_info: n_expert         = 0
+bookshelf-scanner  | print_info: n_expert_used    = 0
+bookshelf-scanner  | print_info: causal attn      = 1
+bookshelf-scanner  | print_info: pooling type     = 0
+bookshelf-scanner  | print_info: rope type        = 2
+bookshelf-scanner  | print_info: rope scaling     = linear
+bookshelf-scanner  | print_info: freq_base_train  = 10000.0
+bookshelf-scanner  | print_info: freq_scale_train = 1
+bookshelf-scanner  | print_info: n_ctx_orig_yarn  = 2048
+bookshelf-scanner  | print_info: rope_finetuned   = unknown
+bookshelf-scanner  | print_info: model type       = 1B
+bookshelf-scanner  | print_info: model params     = 1.42 B
+bookshelf-scanner  | print_info: general.name     = moondream2
+bookshelf-scanner  | print_info: vocab type       = BPE
+bookshelf-scanner  | print_info: n_vocab          = 51200
+bookshelf-scanner  | print_info: n_merges         = 50000
+bookshelf-scanner  | print_info: BOS token        = 50256 '<|endoftext|>'
+bookshelf-scanner  | print_info: EOS token        = 50256 '<|endoftext|>'
+bookshelf-scanner  | print_info: EOT token        = 50256 '<|endoftext|>'
+bookshelf-scanner  | print_info: UNK token        = 50256 '<|endoftext|>'
+bookshelf-scanner  | print_info: LF token         = 198 'Ċ'
+bookshelf-scanner  | print_info: EOG token        = 50256 '<|endoftext|>'
+bookshelf-scanner  | print_info: max token length = 256
+bookshelf-scanner  | load_tensors: loading model tensors, this can take a while... (mmap = true)
+bookshelf-scanner  | load_tensors: layer   0 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   1 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   2 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   3 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   4 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   5 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   6 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   7 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   8 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer   9 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  10 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  11 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  12 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  13 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  14 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  15 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  16 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  17 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  18 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  19 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  20 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  21 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  22 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  23 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: layer  24 assigned to device CPU, is_swa = 0
+bookshelf-scanner  | load_tensors: tensor 'token_embd.weight' (q4_K) (and 184 others) cannot be used with preferred buffer type CPU_REPACK, using CPU instead
+bookshelf-scanner  | load_tensors:   CPU_REPACK model buffer size =   378.00 MiB
+bookshelf-scanner  | load_tensors:   CPU_Mapped model buffer size =   865.05 MiB
+bookshelf-scanner  | repack: repack tensor blk.0.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.0.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.1.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.1.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.2.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.2.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.3.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.3.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.3.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.4.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.4.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.4.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.5.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.5.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.6.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.6.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.6.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.7.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.7.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.7.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.8.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.8.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.9.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.9.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.9.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.10.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.10.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.10.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.11.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.11.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.12.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.12.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.12.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.13.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.13.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.13.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.14.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.14.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.15.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.15.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.15.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.16.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.16.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.16.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.17.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.17.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.18.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.18.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.18.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.19.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.19.ffn_down.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.19.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.20.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.20.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.21.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.21.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.22.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | repack: repack tensor blk.22.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.23.attn_output.weight with q4_K_8x8
+bookshelf-scanner  | .repack: repack tensor blk.23.ffn_up.weight with q4_K_8x8
+bookshelf-scanner  | ........................................
+bookshelf-scanner  | llama_context: constructing llama_context
+bookshelf-scanner  | llama_context: n_seq_max     = 1
+bookshelf-scanner  | llama_context: n_ctx         = 1024
+bookshelf-scanner  | llama_context: n_ctx_per_seq = 1024
+bookshelf-scanner  | llama_context: n_batch       = 512
+bookshelf-scanner  | llama_context: n_ubatch      = 512
+bookshelf-scanner  | llama_context: causal_attn   = 1
+bookshelf-scanner  | llama_context: flash_attn    = 0
+bookshelf-scanner  | llama_context: freq_base     = 10000.0
+bookshelf-scanner  | llama_context: freq_scale    = 1
+bookshelf-scanner  | llama_context: n_ctx_per_seq (1024) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+bookshelf-scanner  | set_abort_callback: call
+bookshelf-scanner  | llama_context:        CPU  output buffer size =     0.20 MiB
+bookshelf-scanner  | create_memory: n_ctx = 1024 (padded)
+bookshelf-scanner  | llama_kv_cache_unified: layer   0: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   1: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   2: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   3: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   4: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   5: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   6: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   7: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   8: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer   9: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  10: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  11: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  12: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  13: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  14: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  15: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  16: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  17: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  18: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  19: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  20: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  21: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  22: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified: layer  23: dev = CPU
+bookshelf-scanner  | llama_kv_cache_unified:        CPU KV buffer size =   192.00 MiB
+bookshelf-scanner  | llama_kv_cache_unified: size =  192.00 MiB (  1024 cells,  24 layers,  1 seqs), K (f16):   96.00 MiB, V (f16):   96.00 MiB
+bookshelf-scanner  | llama_kv_cache_unified: LLAMA_SET_ROWS=0, using old ggml_cpy() method for backwards compatibility
+bookshelf-scanner  | llama_context: enumerating backends
+bookshelf-scanner  | llama_context: backend_ptrs.size() = 1
+bookshelf-scanner  | llama_context: max_nodes = 65536
+bookshelf-scanner  | llama_context: worst-case: n_tokens = 512, n_seqs = 1, n_outputs = 0
+bookshelf-scanner  | graph_reserve: reserving a graph for ubatch with n_tokens =  512, n_seqs =  1, n_outputs =  512
+bookshelf-scanner  | graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+bookshelf-scanner  | graph_reserve: reserving a graph for ubatch with n_tokens =  512, n_seqs =  1, n_outputs =  512
+bookshelf-scanner  | llama_context:        CPU compute buffer size =   104.00 MiB
+bookshelf-scanner  | llama_context: graph nodes  = 945
+bookshelf-scanner  | llama_context: graph splits = 1
+bookshelf-scanner  | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+bookshelf-scanner  | Model metadata: {'tokenizer.ggml.unknown_token_id': '50256', 'tokenizer.ggml.eos_token_id': '50256', 'tokenizer.ggml.bos_token_id': '50256', 'general.architecture': 'phi2', 'general.name': 'moondream2', 'phi2.context_length': '2048', 'general.quantization_version': '2', 'tokenizer.ggml.model': 'gpt2', 'tokenizer.ggml.add_bos_token': 'false', 'phi2.embedding_length': '2048', 'phi2.attention.head_count': '32', 'phi2.attention.head_count_kv': '32', 'phi2.feed_forward_length': '8192', 'phi2.attention.layer_norm_epsilon': '0.000010', 'phi2.block_count': '24', 'phi2.rope.dimension_count': '32', 'general.file_type': '15'}
+bookshelf-scanner  | INFO:     Started server process [16]
+bookshelf-scanner  | INFO:     Waiting for application startup.
+bookshelf-scanner  | INFO:     Application startup complete.
+bookshelf-scanner  | INFO:     127.0.0.1:59766 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     172.18.0.2:44004 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     172.18.0.2:56804 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:    Async Processing image: /app/output/temp_1752640790_IMG_2441b.jpg
+bookshelf-scanner  | 
+bookshelf-scanner  | WARNING ⚠️ imgsz=[871] must be multiple of max stride 32, updating to [896]
+bookshelf-scanner  | 0: 896x320 5 books, 6065.1ms
+bookshelf-scanner  | Speed: 6.3ms preprocess, 6065.1ms inference, 71.6ms postprocess per image at shape (1, 3, 896, 320)
+bookshelf-scanner  | INFO:    Segmented image saved to /app/output/segmentation/temp_1752640790_IMG_2441b.jpg
+bookshelf-scanner  | INFO:    Sent segmented image
+bookshelf-scanner  | INFO:     172.18.0.2:56806 - "POST /api/predict/ HTTP/1.1" 200 OK
+bookshelf-scanner  | image_tokens->nx = 729
+bookshelf-scanner  | image_tokens->ny = 1
+bookshelf-scanner  | batch_f32 size = 1
+bookshelf-scanner  | add_text: 
+bookshelf-scanner  | 
+bookshelf-scanner  | Question: You are looking at a book spine. Read only the visible text on the spine.
+bookshelf-scanner  | 
+bookshelf-scanner  | INSTRUCTIONS:
+bookshelf-scanner  | - Extract ONLY the title and author that you can clearly see
+bookshelf-scanner  | - Do NOT make up or invent text that isn't clearly visible
+bookshelf-scanner  | - Do NOT add descriptive phrases or elaborations
+bookshelf-scanner  | - If the text is blurry or unclear, give your best attempt at the visible words only
+bookshelf-scanner  | - Format as: Title by Author (without quotes)
+bookshelf-scanner  | - If no author is visible, just give the title
+bookshelf-scanner  | - If you cannot make out any text clearly, respond 'No book'
+bookshelf-scanner  | 
+bookshelf-scanner  | Examples:
+bookshelf-scanner  | - Good: "What's So Amazing About Grace by Philip Yancey"
+bookshelf-scanner  | - Good: "Kisses from Kate by Katie Davis"
+bookshelf-scanner  | - Bad: "When Is Grace? About Grace?: A Personal Reflection on the Meaning of Life"
+bookshelf-scanner  | 
+bookshelf-scanner  | What do you see on this book spine?
+bookshelf-scanner  | 
+bookshelf-scanner  | Answer:
+bookshelf-scanner  | INFO:     127.0.0.1:52604 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | Llama.generate: 930 prefix-match hit, remaining 1 prompt tokens to eval
+bookshelf-scanner  | llama_perf_context_print:        load time =      58.89 ms
+bookshelf-scanner  | llama_perf_context_print: prompt eval time =   15874.55 ms /   932 tokens (   17.03 ms per token,    58.71 tokens per second)
+bookshelf-scanner  | llama_perf_context_print:        eval time =    1868.98 ms /    34 runs   (   54.97 ms per token,    18.19 tokens per second)
+bookshelf-scanner  | llama_perf_context_print:       total time =    1946.24 ms /   966 tokens
+bookshelf-scanner  | INFO:    Book 1: The image shows the spine of a book with the title "What's So Amazing About Grace?" written in white. The author's name is also visible on the spine.
+bookshelf-scanner  | image_tokens->nx = 729
+bookshelf-scanner  | image_tokens->ny = 1
+bookshelf-scanner  | batch_f32 size = 1
+bookshelf-scanner  | add_text: 
+bookshelf-scanner  | 
+bookshelf-scanner  | Question: You are looking at a book spine. Read only the visible text on the spine.
+bookshelf-scanner  | 
+bookshelf-scanner  | INSTRUCTIONS:
+bookshelf-scanner  | - Extract ONLY the title and author that you can clearly see
+bookshelf-scanner  | - Do NOT make up or invent text that isn't clearly visible
+bookshelf-scanner  | - Do NOT add descriptive phrases or elaborations
+bookshelf-scanner  | - If the text is blurry or unclear, give your best attempt at the visible words only
+bookshelf-scanner  | - Format as: Title by Author (without quotes)
+bookshelf-scanner  | - If no author is visible, just give the title
+bookshelf-scanner  | - If you cannot make out any text clearly, respond 'No book'
+bookshelf-scanner  | 
+bookshelf-scanner  | Examples:
+bookshelf-scanner  | - Good: "What's So Amazing About Grace by Philip Yancey"
+bookshelf-scanner  | - Good: "Kisses from Kate by Katie Davis"
+bookshelf-scanner  | - Bad: "When Is Grace? About Grace?: A Personal Reflection on the Meaning of Life"
+bookshelf-scanner  | 
+bookshelf-scanner  | What do you see on this book spine?
+bookshelf-scanner  | 
+bookshelf-scanner  | Answer:
+bookshelf-scanner  | Llama.generate: 930 prefix-match hit, remaining 1 prompt tokens to eval
+bookshelf-scanner  | llama_perf_context_print:        load time =      58.89 ms
+bookshelf-scanner  | llama_perf_context_print: prompt eval time =   15555.44 ms /   932 tokens (   16.69 ms per token,    59.91 tokens per second)
+bookshelf-scanner  | llama_perf_context_print:        eval time =    2364.27 ms /    45 runs   (   52.54 ms per token,    19.03 tokens per second)
+bookshelf-scanner  | llama_perf_context_print:       total time =    2441.48 ms /   977 tokens
+bookshelf-scanner  | INFO:    Book 2: The spine of the book is blue and white. It features the title "Kisses from Kate" written in white letters, and the author's name "Katie Davis" written in smaller white letters below the title.
+bookshelf-scanner  | image_tokens->nx = 729
+bookshelf-scanner  | image_tokens->ny = 1
+bookshelf-scanner  | batch_f32 size = 1
+bookshelf-scanner  | add_text: 
+bookshelf-scanner  | 
+bookshelf-scanner  | Question: You are looking at a book spine. Read only the visible text on the spine.
+bookshelf-scanner  | 
+bookshelf-scanner  | INSTRUCTIONS:
+bookshelf-scanner  | - Extract ONLY the title and author that you can clearly see
+bookshelf-scanner  | - Do NOT make up or invent text that isn't clearly visible
+bookshelf-scanner  | - Do NOT add descriptive phrases or elaborations
+bookshelf-scanner  | - If the text is blurry or unclear, give your best attempt at the visible words only
+bookshelf-scanner  | - Format as: Title by Author (without quotes)
+bookshelf-scanner  | - If no author is visible, just give the title
+bookshelf-scanner  | - If you cannot make out any text clearly, respond 'No book'
+bookshelf-scanner  | 
+bookshelf-scanner  | Examples:
+bookshelf-scanner  | - Good: "What's So Amazing About Grace by Philip Yancey"
+bookshelf-scanner  | - Good: "Kisses from Kate by Katie Davis"
+bookshelf-scanner  | - Bad: "When Is Grace? About Grace?: A Personal Reflection on the Meaning of Life"
+bookshelf-scanner  | 
+bookshelf-scanner  | What do you see on this book spine?
+bookshelf-scanner  | 
+bookshelf-scanner  | Answer:
+bookshelf-scanner  | INFO:     127.0.0.1:47262 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | Llama.generate: 930 prefix-match hit, remaining 1 prompt tokens to eval
+bookshelf-scanner  | llama_perf_context_print:        load time =      58.89 ms
+bookshelf-scanner  | llama_perf_context_print: prompt eval time =   15901.55 ms /   932 tokens (   17.06 ms per token,    58.61 tokens per second)
+bookshelf-scanner  | llama_perf_context_print:        eval time =    1249.18 ms /    24 runs   (   52.05 ms per token,    19.21 tokens per second)
+bookshelf-scanner  | llama_perf_context_print:       total time =    1312.51 ms /   956 tokens
+bookshelf-scanner  | INFO:    Book 3: The spine of the book is gray and features the title "The Book of the Dun Cow" by Wangerin.
+bookshelf-scanner  | image_tokens->nx = 729
+bookshelf-scanner  | image_tokens->ny = 1
+bookshelf-scanner  | batch_f32 size = 1
+bookshelf-scanner  | add_text: 
+bookshelf-scanner  | 
+bookshelf-scanner  | Question: You are looking at a book spine. Read only the visible text on the spine.
+bookshelf-scanner  | 
+bookshelf-scanner  | INSTRUCTIONS:
+bookshelf-scanner  | - Extract ONLY the title and author that you can clearly see
+bookshelf-scanner  | - Do NOT make up or invent text that isn't clearly visible
+bookshelf-scanner  | - Do NOT add descriptive phrases or elaborations
+bookshelf-scanner  | - If the text is blurry or unclear, give your best attempt at the visible words only
+bookshelf-scanner  | - Format as: Title by Author (without quotes)
+bookshelf-scanner  | - If no author is visible, just give the title
+bookshelf-scanner  | - If you cannot make out any text clearly, respond 'No book'
+bookshelf-scanner  | 
+bookshelf-scanner  | Examples:
+bookshelf-scanner  | - Good: "What's So Amazing About Grace by Philip Yancey"
+bookshelf-scanner  | - Good: "Kisses from Kate by Katie Davis"
+bookshelf-scanner  | - Bad: "When Is Grace? About Grace?: A Personal Reflection on the Meaning of Life"
+bookshelf-scanner  | 
+bookshelf-scanner  | What do you see on this book spine?
+bookshelf-scanner  | 
+bookshelf-scanner  | Answer:
+bookshelf-scanner  | Llama.generate: 930 prefix-match hit, remaining 1 prompt tokens to eval
+bookshelf-scanner  | llama_perf_context_print:        load time =      58.89 ms
+bookshelf-scanner  | llama_perf_context_print: prompt eval time =   15729.03 ms /   932 tokens (   16.88 ms per token,    59.25 tokens per second)
+bookshelf-scanner  | llama_perf_context_print:        eval time =    1091.55 ms /    20 runs   (   54.58 ms per token,    18.32 tokens per second)
+bookshelf-scanner  | llama_perf_context_print:       total time =    1156.61 ms /   952 tokens
+bookshelf-scanner  | INFO:    Book 4: The book spine features the title "Cross Roads" and the author "Wm. Paul Young".
+bookshelf-scanner  | image_tokens->nx = 729
+bookshelf-scanner  | image_tokens->ny = 1
+bookshelf-scanner  | batch_f32 size = 1
+bookshelf-scanner  | add_text: 
+bookshelf-scanner  | 
+bookshelf-scanner  | Question: You are looking at a book spine. Read only the visible text on the spine.
+bookshelf-scanner  | 
+bookshelf-scanner  | INSTRUCTIONS:
+bookshelf-scanner  | - Extract ONLY the title and author that you can clearly see
+bookshelf-scanner  | - Do NOT make up or invent text that isn't clearly visible
+bookshelf-scanner  | - Do NOT add descriptive phrases or elaborations
+bookshelf-scanner  | - If the text is blurry or unclear, give your best attempt at the visible words only
+bookshelf-scanner  | - Format as: Title by Author (without quotes)
+bookshelf-scanner  | - If no author is visible, just give the title
+bookshelf-scanner  | - If you cannot make out any text clearly, respond 'No book'
+bookshelf-scanner  | 
+bookshelf-scanner  | Examples:
+bookshelf-scanner  | - Good: "What's So Amazing About Grace by Philip Yancey"
+bookshelf-scanner  | - Good: "Kisses from Kate by Katie Davis"
+bookshelf-scanner  | - Bad: "When Is Grace? About Grace?: A Personal Reflection on the Meaning of Life"
+bookshelf-scanner  | 
+bookshelf-scanner  | What do you see on this book spine?
+bookshelf-scanner  | 
+bookshelf-scanner  | Answer:
+bookshelf-scanner  | Llama.generate: 930 prefix-match hit, remaining 1 prompt tokens to eval
+bookshelf-scanner  | llama_perf_context_print:        load time =      58.89 ms
+bookshelf-scanner  | llama_perf_context_print: prompt eval time =   16400.13 ms /   932 tokens (   17.60 ms per token,    56.83 tokens per second)
+bookshelf-scanner  | llama_perf_context_print:        eval time =    1921.91 ms /    35 runs   (   54.91 ms per token,    18.21 tokens per second)
+bookshelf-scanner  | llama_perf_context_print:       total time =    1994.45 ms /   967 tokens
+bookshelf-scanner  | INFO:    Book 5: The spine of the book is gray and white. The title of the book is "The Book of the Dun Cow" and the author's name is "Wangerin".
+bookshelf-scanner  | INFO:    Output directory cleaned up.
+bookshelf-scanner  | INFO:     127.0.0.1:38106 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     127.0.0.1:32964 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     127.0.0.1:50358 - "GET / HTTP/1.1" 200 OK
+bookshelf-scanner  | INFO:     127.0.0.1:35080 - "GET / HTTP/1.1" 200 OK

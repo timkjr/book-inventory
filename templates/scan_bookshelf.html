@@ -1,0 +1,609 @@
+<!-- templates/scan_bookshelf.html -->
+{% extends "base.html" %}
+
+{% block title %}Scan Bookshelf - {{ library_name }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>📸 Scan Bookshelf</h2>
+    
+    {% if not scanner_available %}
+    <div class="error-message">
+        <p>⚠️ Scanner service is not available. Please make sure the scanner backend is running on port 8001.</p>
+        <p>To start the scanner service, run: <code>cd bookshelf-scanner/backend && poetry run python run_server.py</code></p>
+    </div>
+    {% else %}
+    <div class="info-message">
+        <p>📋 Upload an image of your bookshelf to automatically detect and identify books. The AI will analyze the image and extract book titles and authors.</p>
+    </div>
+    
+    <div class="scanner-container">
+        <!-- File Upload Section -->
+        <div class="upload-section">
+            <h3>Upload Image</h3>
+            <form id="scanForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="imageFile">Choose bookshelf image:</label>
+                    <input type="file" id="imageFile" name="image" accept="image/*" required>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" id="scanButton" class="primary-button">
+                        📸 Scan Bookshelf
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Progress Section -->
+        <div id="progressSection" class="progress-section" style="display: none;">
+            <h3>Processing...</h3>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <p id="progressText">Analyzing image...</p>
+        </div>
+        
+        <!-- Results Section -->
+        <div id="resultsSection" class="results-section" style="display: none;">
+            <h3>Detected Books</h3>
+            <p id="resultsCount">Found 0 books</p>
+            
+            <div id="booksContainer" class="books-container">
+                <!-- Detected books will be populated here -->
+            </div>
+            
+            <div class="form-group">
+                <label for="defaultLocation">Default Location (optional):</label>
+                <select id="defaultLocation" name="location">
+                    <option value="">Select location...</option>
+                    {% for location in locations %}
+                    <option value="{{ location }}">{{ location }}</option>
+                    {% endfor %}
+                    <option value="__new__">Other (specify below)</option>
+                </select>
+                <input type="text" id="defaultLocationText" placeholder="Enter new location" style="display: none;">
+            </div>
+            
+            <div class="form-group">
+                <label for="defaultCondition">Default Condition (optional):</label>
+                <select id="defaultCondition" name="condition">
+                    <option value="">Select condition...</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Fair">Fair</option>
+                    <option value="Poor">Poor</option>
+                </select>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="addSelectedBooks" class="primary-button">
+                    📚 Add Selected Books to Inventory
+                </button>
+                <button id="resetScanner" class="secondary-button">
+                    🔄 Scan Another Image
+                </button>
+            </div>
+        </div>
+        
+        <!-- Error Section -->
+        <div id="errorSection" class="error-section" style="display: none;">
+            <h3>Error</h3>
+            <p id="errorMessage"></p>
+            <button id="resetAfterError" class="secondary-button">Try Again</button>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<style>
+.scanner-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.upload-section, .progress-section, .results-section, .error-section {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.info-message {
+    background: #e7f3ff;
+    border: 1px solid #b3d7ff;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    background: #ffe6e6;
+    border: 1px solid #ff9999;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #007bff;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+.books-container {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 10px;
+    background: white;
+}
+
+.book-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+    background: #fafafa;
+    border-radius: 8px;
+}
+
+.book-item.enhanced {
+    border-left: 4px solid #007bff;
+}
+
+.book-item:last-child {
+    border-bottom: none;
+}
+
+.book-checkbox {
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.book-cover {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+    border: 1px solid #ddd;
+}
+
+.book-details {
+    flex: 1;
+    min-width: 0; /* Allow text to wrap */
+}
+
+.book-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    gap: 10px;
+}
+
+.book-title {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.confidence-indicator {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.confidence-high {
+    background: #d4edda;
+    color: #155724;
+}
+
+.confidence-medium {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.confidence-low {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.book-author {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.book-suggestions {
+    background: #e7f3ff;
+    border: 1px solid #b3d7ff;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 8px 0;
+}
+
+.suggestions-header {
+    font-weight: bold;
+    font-size: 0.85em;
+    color: #0056b3;
+    margin-bottom: 4px;
+}
+
+.suggestion {
+    font-size: 0.85em;
+    color: #0056b3;
+    margin: 2px 0;
+}
+
+.book-metadata {
+    margin: 8px 0;
+}
+
+.metadata-items {
+    font-size: 0.8em;
+    color: #666;
+    padding: 4px 0;
+}
+
+.book-description {
+    font-size: 0.85em;
+    color: #555;
+    line-height: 1.4;
+    margin-top: 8px;
+    padding: 8px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    border-left: 3px solid #dee2e6;
+}
+
+.book-edit {
+    margin-left: 15px;
+    min-width: 200px;
+}
+
+.edit-field {
+    margin-bottom: 8px;
+}
+
+.edit-field label {
+    display: block;
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 2px;
+    font-weight: bold;
+}
+
+.book-edit input {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+.book-edit input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.primary-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.primary-button:hover {
+    background: #0056b3;
+}
+
+.primary-button:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+.secondary-button {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.secondary-button:hover {
+    background: #545b62;
+}
+
+#defaultLocationText {
+    margin-top: 10px;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const scanForm = document.getElementById('scanForm');
+    const scanButton = document.getElementById('scanButton');
+    const progressSection = document.getElementById('progressSection');
+    const progressText = document.getElementById('progressText');
+    const resultsSection = document.getElementById('resultsSection');
+    const resultsCount = document.getElementById('resultsCount');
+    const booksContainer = document.getElementById('booksContainer');
+    const errorSection = document.getElementById('errorSection');
+    const errorMessage = document.getElementById('errorMessage');
+    const addSelectedBooks = document.getElementById('addSelectedBooks');
+    const resetScanner = document.getElementById('resetScanner');
+    const resetAfterError = document.getElementById('resetAfterError');
+    const defaultLocation = document.getElementById('defaultLocation');
+    const defaultLocationText = document.getElementById('defaultLocationText');
+    
+    let detectedBooks = [];
+    
+    // Handle location dropdown
+    defaultLocation.addEventListener('change', function() {
+        if (this.value === '__new__') {
+            defaultLocationText.style.display = 'block';
+        } else {
+            defaultLocationText.style.display = 'none';
+        }
+    });
+    
+    // Handle form submission
+    scanForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(scanForm);
+        const imageFile = formData.get('image');
+        
+        if (!imageFile) {
+            showError('Please select an image file');
+            return;
+        }
+        
+        // Show progress
+        showProgress();
+        
+        try {
+            const response = await fetch('/scan-bookshelf', {
+                method: 'POST',
+                body: formData
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                detectedBooks = result.detected_books;
+                showResults(detectedBooks);
+            } else {
+                showError(result.error || 'Unknown error occurred');
+            }
+        } catch (error) {
+            showError('Error connecting to scanner service: ' + error.message);
+        }
+    });
+    
+    // Handle adding selected books
+    addSelectedBooks.addEventListener('click', async function() {
+        const selectedBooks = getSelectedBooks();
+        
+        if (selectedBooks.length === 0) {
+            alert('Please select at least one book to add');
+            return;
+        }
+        
+        // Add default location and condition to selected books
+        const location = defaultLocation.value === '__new__' ? defaultLocationText.value : defaultLocation.value;
+        const condition = document.getElementById('defaultCondition').value;
+        
+        selectedBooks.forEach(book => {
+            if (location) book.location = location;
+            if (condition) book.condition = condition;
+        });
+        
+        addSelectedBooks.disabled = true;
+        addSelectedBooks.textContent = 'Adding books...';
+        
+        try {
+            const response = await fetch('/api/scan-and-add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    books: selectedBooks
+                })
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                alert(`Successfully added ${result.total_added} books to inventory!`);
+                if (result.errors.length > 0) {
+                    console.log('Errors:', result.errors);
+                }
+                // Redirect to main inventory page
+                window.location.href = '/';
+            } else {
+                showError('Error adding books: ' + (result.error || 'Unknown error'));
+            }
+        } catch (error) {
+            showError('Error adding books: ' + error.message);
+        } finally {
+            addSelectedBooks.disabled = false;
+            addSelectedBooks.textContent = '📚 Add Selected Books to Inventory';
+        }
+    });
+    
+    // Reset handlers
+    resetScanner.addEventListener('click', resetForm);
+    resetAfterError.addEventListener('click', resetForm);
+    
+    function showProgress() {
+        document.querySelector('.upload-section').style.display = 'none';
+        progressSection.style.display = 'block';
+        resultsSection.style.display = 'none';
+        errorSection.style.display = 'none';
+        
+        // Simulate progress
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += 10;
+            document.querySelector('.progress-fill').style.width = progress + '%';
+            
+            if (progress >= 90) {
+                clearInterval(interval);
+                progressText.textContent = 'Analyzing detected books...';
+            }
+        }, 200);
+    }
+    
+    function showResults(books) {
+        progressSection.style.display = 'none';
+        resultsSection.style.display = 'block';
+        errorSection.style.display = 'none';
+        
+        resultsCount.textContent = `Found ${books.length} books`;
+        
+        // Clear previous results
+        booksContainer.innerHTML = '';
+        
+        // Add each book with enhanced display
+        books.forEach((book, index) => {
+            const bookItem = document.createElement('div');
+            bookItem.className = 'book-item enhanced';
+            
+            // Determine if we have suggestions
+            const hasSuggestions = book.suggested_title || book.suggested_author;
+            const hasMetadata = book.metadata_found;
+            
+            // Build confidence indicator
+            const confidenceClass = book.confidence === 'high' ? 'confidence-high' : 
+                                  book.confidence === 'medium' ? 'confidence-medium' : 'confidence-low';
+            
+            // Build cover image if available
+            const coverImage = book.cover_url ? 
+                `<img src="${book.cover_url}" alt="Book cover" class="book-cover">` : '';
+            
+            // Build suggestions section
+            let suggestionsHtml = '';
+            if (hasSuggestions) {
+                suggestionsHtml = `
+                    <div class="book-suggestions">
+                        <div class="suggestions-header">💡 Suggested improvements:</div>
+                        ${book.suggested_title ? `<div class="suggestion">Title: "${book.suggested_title}"</div>` : ''}
+                        ${book.suggested_author ? `<div class="suggestion">Author: "${book.suggested_author}"</div>` : ''}
+                    </div>
+                `;
+            }
+            
+            // Build metadata section
+            let metadataHtml = '';
+            if (hasMetadata) {
+                const metadataItems = [];
+                if (book.publisher) metadataItems.push(`📚 ${book.publisher}`);
+                if (book.year) metadataItems.push(`📅 ${book.year}`);
+                if (book.genre) metadataItems.push(`🏷️ ${book.genre}`);
+                if (book.page_count) metadataItems.push(`📄 ${book.page_count} pages`);
+                
+                if (metadataItems.length > 0) {
+                    metadataHtml = `
+                        <div class="book-metadata">
+                            <div class="metadata-items">${metadataItems.join(' • ')}</div>
+                        </div>
+                    `;
+                }
+            }
+            
+            bookItem.innerHTML = `
+                <input type="checkbox" class="book-checkbox" checked data-index="${index}">
+                ${coverImage}
+                <div class="book-details">
+                    <div class="book-header">
+                        <div class="book-title">${book.title}</div>
+                        <div class="confidence-indicator ${confidenceClass}">${book.confidence}</div>
+                    </div>
+                    <div class="book-author">by ${book.author || 'Unknown Author'}</div>
+                    ${suggestionsHtml}
+                    ${metadataHtml}
+                    ${book.description ? `<div class="book-description">${book.description.substring(0, 150)}${book.description.length > 150 ? '...' : ''}</div>` : ''}
+                </div>
+                <div class="book-edit">
+                    <div class="edit-field">
+                        <label>Title:</label>
+                        <input type="text" placeholder="Title" value="${book.suggested_title || book.title}" data-field="title" data-index="${index}">
+                    </div>
+                    <div class="edit-field">
+                        <label>Author:</label>
+                        <input type="text" placeholder="Author" value="${book.suggested_author || book.author || ''}" data-field="author" data-index="${index}">
+                    </div>
+                    ${book.isbn ? `<div class="edit-field"><label>ISBN:</label><input type="text" value="${book.isbn}" data-field="isbn" data-index="${index}"></div>` : ''}
+                </div>
+            `;
+            booksContainer.appendChild(bookItem);
+        });
+        
+        // Add event listeners for editing
+        booksContainer.addEventListener('input', function(e) {
+            if (e.target.tagName === 'INPUT' && e.target.dataset.field) {
+                const index = parseInt(e.target.dataset.index);
+                const field = e.target.dataset.field;
+                detectedBooks[index][field] = e.target.value;
+            }
+        });
+    }
+    
+    function showError(message) {
+        progressSection.style.display = 'none';
+        resultsSection.style.display = 'none';
+        errorSection.style.display = 'block';
+        errorMessage.textContent = message;
+    }
+    
+    function resetForm() {
+        document.querySelector('.upload-section').style.display = 'block';
+        progressSection.style.display = 'none';
+        resultsSection.style.display = 'none';
+        errorSection.style.display = 'none';
+        
+        scanForm.reset();
+        detectedBooks = [];
+        document.querySelector('.progress-fill').style.width = '0%';
+        progressText.textContent = 'Analyzing image...';
+    }
+    
+    function getSelectedBooks() {
+        const checkboxes = document.querySelectorAll('.book-checkbox:checked');
+        return Array.from(checkboxes).map(checkbox => {
+            const index = parseInt(checkbox.dataset.index);
+            return detectedBooks[index];
+        });
+    }
+});
+</script>
+{% endblock %}
